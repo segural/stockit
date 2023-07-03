@@ -1,0 +1,36 @@
+<!-- Left side column. contains the sidebar -->
+<aside class="main-sidebar">
+   <!-- sidebar -->
+   <div class="sidebar">
+      <!-- sidebar menu -->
+      <ul class="sidebar-menu">
+         <li class="treeview">
+            <a href="/users/index"><i class="fa fa-tachometer"></i><span>Dashboard</span>
+               <span class="pull-right-container">
+               </span>
+            </a>
+         </li>
+         <% if (req.session.userCan.includes("sistema_administrar")) { %>
+            <li class="treeview">
+                  <a href="javascript:;" class="<%= req.originalUrl.includes('/users') || req.originalUrl.includes('/roles') || req.originalUrl.includes('/permissions')? 'active' : '' %>">
+                     <i class="fa fa-male"></i>
+                     <span>Usuarios</span>
+                     <span class="pull-right-container"><i class="fa fa-angle-left float-right"></i></span>
+                  </a>
+                  <ul class="treeview-menu">
+                     <% if (req.session.userCan.includes("sistema_administrar")) { %>
+                     <li class="<%= req.originalUrl === '/users/list' ? 'active' : '' %>" ><a  href="/users/list">Usuarios</a></li>
+                     <% } %>
+                     <% if (req.session.userCan.includes("sistema_administrar")) { %>
+                        <li class="<%= req.originalUrl.includes('/roles') ? 'active' : '' %>" ><a  href="/roles/list">Roles</a></li>
+                     <% } %>
+                     <% if (req.session.userCan.includes("sistema_administrar") && req.session.userCan.includes("sistema_administrar")) { %>
+                        <li class="<%= req.originalUrl.includes('/permissions') ? 'active' : '' %>"><a  href="/permissions/list">Permisos</a></i></li>
+                     <% } %>                    
+                  </ul>
+            </li>
+         <% } %>
+      </ul>
+   </div>
+   <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+main{
+    height: 730px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.main {
+    padding-top: 250px;
+    max-width: 550px;
+}
+
+.body {
+    background-image: url(/img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #c7c3c3;
+}
+
+.main-title {
+    padding-top: 12px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.main-text {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #ffffff;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #ffffff;
+}
+
+span {
+    margin-bottom: 10px;
+}
+
+.spans{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input {
+    width: 250px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.form-select{
+    color: #000000;
+}
+
+option{
+    color: #000000;
+}
+
+.button-send{
+    margin-right: 5px ;
+    margin-left: 5px;
+    padding: 5px;
+    font-weight: 700;
+    background-color: #00d084;
+    border-radius: 10%;
+    border: #054f16 solid 3px;
+    width: 100px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.button-send:hover {
+    background-color: #054f16;
+}
+
+.footer {
+    max-width: 650px;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.foot-logo{
+    padding-top: 280px;
+    width: 17%;
+    margin: auto;
+}
+
+.logo-clover{
+    width: 100%;
+}
+
+.foot-title{
+    color: #000000;
+    margin: auto;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+.main-buttons{
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    padding-bottom: 15px;
+}
+
+/* Responsive */
+@media (min-width: 551px) {
+    main {
+        height: 1000px
+      }
+    .main{
+        padding-top: 350px;
+    }   
+    .foot-logo{
+        padding-top: 425px;
+        width: 17%;
+    }
+}

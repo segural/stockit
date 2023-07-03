@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+main{
+    height: 100%;
+}
+
+.body {
+    background: url(/img/TeAfiliamosFacil.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #c7c3c3;
+}
+
+.main-buttons{
+    padding-top: 450px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-con {
+    margin-right: 15px ;
+    margin-left: 15px;
+    padding: 5px;
+    font-weight: 700;
+    background-color: #00d084;
+    border-radius: 10%;
+    border: #000000 solid 3px;
+}
+
+.button-sin {
+    margin-right: 15px ;
+    margin-left: 15px;
+    padding: 5px;
+    font-weight: 700;
+    background-color: #9b51e0;
+    border-radius: 10%;
+    border: #000000 solid 3px;
+}
+
+.button-con:hover {
+    background-color: #054f16;
+}
+
+.button-sin:hover {
+    background-color: #3d1066;
+}
+
+.footer {
+    max-width: 650px;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.foot-logo{
+    padding-top: 165px;
+    width: 17%;
+    margin: auto;
+}
+
+.logo-clover{
+    width: 100%;
+}
+
+.foot-title{
+    color: #000000;
+    margin: auto;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+/* Responsive */
+@media (min-width: 551px) {    
+    main {
+      height: 100%
+    }
+    .main-buttons {
+        padding-top: 630px;
+    }
+    .button-con {
+        font-size: 20px;
+    }
+    .button-sin {
+        font-size: 20px;
+    }
+    .foot-logo{
+        padding-top: 230px;
+        width: 10%;
+    }
+
+}

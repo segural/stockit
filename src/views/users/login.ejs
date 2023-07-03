@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>CRM user login</title>
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="/assets/dist/img/ico/favicon.png" type="image/x-icon" />
+    <!-- Bootstrap -->
+    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Pe-icon-7-stroke -->
+    <link href="/assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <!-- style css -->
+    <link href="/assets/dist/css/stylecrm.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Content Wrapper -->
+    <div class="login-wrapper">
+      <div class="container-center">
+        <div class="login-area">
+          <div class="card panel-custom">
+            <div class="card-heading custom_head">
+              <div class="view-header">
+                <div class="header-icon">
+                  <i class="pe-7s-unlock"></i>
+                </div>
+                <div class="header-title">
+                  <h3>Login</h3>
+                  <small><strong>Por favor ingrese sus credenciales.</strong></small>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <form action="/users/login" method="POST" id="form" novalidate>
+                <% if (locals.errors && errors.noUser) { %>
+                <p class="feedback"><%= errors.noUser.msg %></p>
+                <% } %> <% if (locals.errors && errors.userInactive) { %>
+                <p class="feedback"><%= errors.userInactive.msg %></p>
+                <% } %>
+                <div class="main-forms-container">
+                  <div class="form-group">
+                    <label class="control-label" for="username">Usuario</label>
+                    <input type="text" name="user" placeholder="Ingrese su usuario" class="form-control" id="user" value="<%= locals.old && old.user %>" />
+                    <% if (locals.errors && errors.user) { %>
+                    <p class="feedback"><%= errors.user.msg %></p>
+                    <% } %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label" for="password">Contraseña</label>
+                    <input type="password" name="password" placeholder="Ingrese su contraseña" class="form-control" id="password" value="<%= locals.old && old.password %>" />
+                    <% if (locals.errors && errors.password) { %>
+                    <p class="feedback"><%= errors.password.msg %></p>
+                    <% } %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="rememberMe" class="control-label">Recordame</label>
+                  <input type="checkbox" name="rememberMe" />
+                </div>
+                <div>
+                  <button type="submit" class="btn green_btn">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- jQuery -->
+    <script src="/assets/plugins/jQuery/jquery-1.12.4.min.js"></script>
+    <!-- Bootstrap proper -->
+    <script src="/assets/bootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
