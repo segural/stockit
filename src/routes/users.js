@@ -42,7 +42,7 @@ router.post("/", validateUserStore, usersController.userStore);
 //  Rutas para: Edición de usuarios
 router.get('/:id/edit', authMiddleware, usersController.userEdit);
 router.get('/:id/toggle', usersController.userToggle); 
-router.put('/:id', validateUserUpdate, usersController.userUpdate);
+router.put('/:id', usersController.userUpdate);
 
 //  Rutas para: Borrar usuarios
 router.delete('/:id', usersController.userDestroy);

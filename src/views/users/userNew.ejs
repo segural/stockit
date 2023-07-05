@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CRM Nuevo Usuario</title>
+    <title>Control de Stock</title>
     <!-- Favicon and touch icons -->
     <link rel="shortcut icon" href="/assets/dist/img/ico/favicon.png" type="image/x-icon" />
     <!-- Start Global Mandatory Style
@@ -47,11 +47,11 @@
     <!-- Site wrapper -->
     <div class="wrapper">
       <!-- Include Header -->
-      <%- include('../../partials/header.ejs') %>
+      <%- include('../partials/header.ejs') %>
       <!--header end-->
 
       <!--Include Sidebar-->
-      <%- include('../../partials/sidebar.ejs') %>
+      <%- include('../partials/sidebar.ejs') %>
       <!--sidebar end-->
 
       <!-- Content Wrapper. Contains page content -->
@@ -77,7 +77,7 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <form action="/users" method="POST" enctype="multipart/form-data" id="form" novalidate>
+                  <form action="/users" method="POST" id="form" novalidate>
                     <div class="row">
                       <div class="col-md-6">
                         <% if (locals.errors && errors.noUser) { %>
@@ -125,13 +125,6 @@
                             </div>
                           </div>
                           <div class="col-md-12 form-group">
-                            <label class="control-label">Selecciona una foto de perfil:</label>
-                            <input type="file" name="image" accept=".jpg" class="input-file" id="image" />
-                            <% if (locals.errors && errors.image) { %>
-                            <p class="feedback"><%= errors.image.msg %></p>
-                            <% } %>
-                          </div>
-                          <div class="col-md-12 form-group">
                             <label for="changePass" class="control-label">Cambiar contraseña en el proximo logueo</label>
                             <input type="checkbox" name="changePass" value="true" checked />
                           </div>
@@ -152,7 +145,7 @@
       </div>
       <!-- /.content-wrapper -->
       <!-- Include footer -->
-      <%- include('../../partials/footer.ejs') %>
+      <%- include('../partials/footer.ejs') %>
       <!-- footer end -->
     </div>
     <!-- ./wrapper -->

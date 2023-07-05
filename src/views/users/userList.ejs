@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CRM Lista de Usuarios</title>
+    <title>Control de Stock</title>
     <!-- Favicon and touch icons -->
     <link rel="shortcut icon" href="/assets/dist/img/ico/favicon.png" type="image/x-icon" />
     <!-- Start Global Mandatory Style
@@ -47,11 +47,11 @@
     <!-- Site wrapper -->
     <div class="wrapper">
       <!-- Include Header -->
-      <%- include('../../partials/header.ejs') %>
+      <%- include('../partials/header.ejs') %>
       <!--header end-->
 
       <!--Include Sidebar-->
-      <%- include('../../partials/sidebar.ejs') %>
+      <%- include('../partials/sidebar.ejs') %>
       <!--sidebar end-->
 
       <!-- Content Wrapper. Contains page content -->
@@ -71,11 +71,9 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="btn-group d-flex" role="group">
-                <% if (req.session.userCan.includes("usuarios_gestionar") && req.session.userCan.includes("usuarios_crear")) { %>
                 <div class="buttonexport">
                   <a href="/users/new" class="btn btn-add"><i class="fa fa-plus"></i> Nuevo usuario</a>
                 </div>
-                <% } %>
               </div>
               <div class="card" id="lobicard-custom-control" data-sortable="true">
                 <div class="card-header">
@@ -96,11 +94,8 @@
                           <th>Usuario</th>
                           <th>e-mail</th>
                           <th>Rol asignado</th>
-                          <% if (req.session.userCan.includes("usuarios_gestionar")) { %> <% if (req.session.userCan.includes("usuarios_editar")) { %>
                           <th class="dt-center">Habilitado</th>
-                          <% } %> <% if (req.session.userCan.includes("usuarios_editar") || req.session.userCan.includes("usuarios_eliminar")) { %>
                           <th class="dt-center">Acciones</th>
-                          <% }%> <% } %>
                         </tr>
                       </thead>
                       <tbody>
@@ -115,7 +110,6 @@
                             <label class="label-custom label label-default"><%= user.roles[i].name %></label>
                             <% } %>
                           </td>
-                          <% if (req.session.userCan.includes("usuarios_gestionar")) { %> <% if (req.session.userCan.includes("usuarios_editar")) { %>
                           <td class="dt-center">
                             <% if (user.active) { %>
                             <a href="/users/<%= user.id %>/toggle"
@@ -127,17 +121,13 @@
                             ></a>
                             <% } %>
                           </td>
-                          <% } %> <% if (req.session.userCan.includes("usuarios_editar") || req.session.userCan.includes("usuarios_eliminar")) { %>
                           <td class="dt-center">
-                            <% if (req.session.userCan.includes("usuarios_editar")) { %>
                             <a href="/users/<%= user.id %>/edit">
                               <button class="btn btn-add btn-sm"><i class="fa fa-pencil"></i></button
                             ></a>
-                            <% } %> <% if (req.session.userCan.includes("usuarios_eliminar")) { %>
                             <a data-toggle="modal" href="#myModal-<%= user.id %>">
                               <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button>
                             </a>
-                            <% } %>
                             <!-- Modal -->
                             <div class="modal fade" id="myModal-<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
@@ -161,7 +151,6 @@
                             </div>
                             <!-- modal -->
                           </td>
-                          <% } %> <% } %>
                         </tr>
                         <% } %>
                       </tbody>
@@ -176,7 +165,7 @@
       </div>
       <!-- /.content-wrapper -->
       <!-- Include footer -->
-      <%- include('../../partials/footer.ejs') %>
+      <%- include('../partials/footer.ejs') %>
       <!-- footer end -->
     </div>
     <!-- ./wrapper -->

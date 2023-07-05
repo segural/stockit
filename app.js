@@ -27,10 +27,14 @@ app.set("views", "./src/views/");
 //Requiero el/los archivo/s de rutas que se usarán para dirigir las paticiones:
 const mainRoutes = require("./src/routes/main.js");
 const usersRoutes = require("./src/routes/users.js");
+const rolesRoutes = require("./src/routes/roles.js");
+const permissionsRoutes = require("./src/routes/permissions.js");
 
 //Indico para cada petición, el archivo de rutas que lo manejará:
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
+app.use("/roles", rolesRoutes);
+app.use("/permissions", permissionsRoutes);
 
 //Inicio servidor en puerto 3000
 app.listen(process.env.PORT || 3000, function () {

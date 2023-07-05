@@ -10,6 +10,39 @@
                </span>
             </a>
          </li>
+         <li class="treeview">
+            <a href="javascript:;" class="<%= req.originalUrl.includes('/stock')? 'active' : '' %>">
+               <i class="fa fa-exchange"></i>
+               <span>ABM Stock</span>
+               <span class="pull-right-container"><i class="fa fa-angle-left float-right"></i></span>
+            </a>
+            <ul class="treeview-menu">
+               <li class="<%= req.originalUrl === '/stock/list' ? 'active' : '' %>" ><a  href="/stock/list">Stock Cantidades</a></li>       
+            </ul>
+         </li>
+         <li class="treeview">
+            <a href="javascript:;" class="<%= req.originalUrl.includes('/inventory')? 'active' : '' %>">
+               <i class="fa fa-list-ol"></i>
+               <span>Inventarios</span>
+               <span class="pull-right-container"><i class="fa fa-angle-left float-right"></i></span>
+            </a>
+            <ul class="treeview-menu">
+               <li class="<%= req.originalUrl === '/inventory/desktop' ? 'active' : '' %>" ><a  href="/inventory/desktop">Desktops</a></li>       
+               <li class="<%= req.originalUrl === '/inventory/laptop' ? 'active' : '' %>" ><a  href="/inventory/laptop">Notebooks</a></li>       
+               <li class="<%= req.originalUrl === '/inventory/server' ? 'active' : '' %>" ><a  href="/inventory/server">Servidores</a></li>       
+            </ul>
+         </li>
+         <li class="treeview">
+            <a href="javascript:;" class="<%= req.originalUrl.includes('/products')? 'active' : '' %>">
+               <i class="fa fa-laptop"></i>
+               <span>Productos</span>
+               <span class="pull-right-container"><i class="fa fa-angle-left float-right"></i></span>
+            </a>
+            <ul class="treeview-menu">
+               <li class="<%= req.originalUrl === '/products/item' ? 'active' : '' %>" ><a  href="/products/item">Productos</a></li>       
+               <li class="<%= req.originalUrl === '/products/categories' ? 'active' : '' %>" ><a  href="/products/categories">Categorías</a></li>             
+            </ul>
+         </li>
          <% if (req.session.userCan.includes("sistema_administrar")) { %>
             <li class="treeview">
                   <a href="javascript:;" class="<%= req.originalUrl.includes('/users') || req.originalUrl.includes('/roles') || req.originalUrl.includes('/permissions')? 'active' : '' %>">
