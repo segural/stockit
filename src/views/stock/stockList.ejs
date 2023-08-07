@@ -65,184 +65,38 @@
             <i class="fa fa-dashboard"></i>
           </div>
           <div class="header-title">
-            <h1>Panel de administración de stock</h1>
-            <small>Información destacada</small>
+            <h1>Stock General</h1>
+            <small>Información detallada</small>
           </div>
         </section>
         <!-- Main content -->
         <section class="content">
           <div class="row" style="justify-content: center;">
+            <% for (stock of stocks) {%>
             <div class="col-sm-6 col-md-6 col-lg-3">
-              <div id="cardbox1">
+              <a href="/stock/detail/<%= stock.category %>">
+              <% if (stock.quantity >= 5) {%>
+              <div id="cardbox1" style="background-color: #2b997a;">
                 <div class="statistic-box">
-                  <i class="fa fa-laptop fa-3x"></i>
-                  <div class="counter-number pull-right">
-                    <span style="font-size: 20px; font-weight: bold;">10</span>
-                  </div>
-                  <h3>Notebooks</h3>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div id="cardbox2">
+                  <i class="fa fa-check fa-3x" style="margin-bottom: 10px;"></i>
+              <% } else if (stock.quantity < 5 && stock.quantity >= 3) {%>
+              <div id="cardbox1" style="background-color: #fca103;">
                 <div class="statistic-box">
-                  <i class="fa fa-tv fa-3x"></i>
-                  <div class="counter-number pull-right">
-                    <span style="font-size: 20px; font-weight: bold;">8</span>
-                  </div>
-                  <h3>Monitores</h3>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div id="cardbox3">
+                  <i class="fa fa-exclamation-triangle fa-3x" style="margin-bottom: 10px;"></i>
+              <% } else {%>
+              <div id="cardbox1" style="background-color: #850d04;">
                 <div class="statistic-box">
-                  <i class="fa fa-desktop fa-3x"></i>
+                  <i class="fa fa-times-circle fa-3x" style="margin-bottom: 10px;"></i>
+              <% } %>
                   <div class="counter-number pull-right">
-                    <span style="font-size: 20px; font-weight: bold;">2</span>
+                    <span style="font-size: 20px; font-weight: bold;"><%= stock.quantity %></span>
                   </div>
-                  <h3>Desktops</h3>
+                  <h3><%= stock.category %></h3>
                 </div>
               </div>
+              </a>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6 pinpin">
-              <div class="card lobicard lobicard-custom-control" data-sortable="true">
-                <div class="card-header">
-                  <div class="card-title custom_title">
-                    <h4>Ultimos equipos en inventario</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="Workslist">
-                    <div class="worklistdate">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Categoría</th>
-                            <th>Nro. de máquina</th>
-                            <th>Centro de Atención</th>
-                            <th>Sector</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="info1">
-                            <td>Desktop</td>
-                            <td>TE1024</td>
-                            <td>Terapia Radiante</td>
-                            <td>Recepción</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 pinpin">
-              <div class="card lobicard lobicard-custom-control" data-sortable="true">
-                <div class="card-header">
-                  <div class="card-title custom_title">
-                    <h4>Ultimos pedidos de compra</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="Workslist">
-                    <div class="worklistdate">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Fecha</th>
-                            <th>Solpe / OC</th>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Razón Social</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="info1">
-                            <td>05/07/2023</td>
-                            <td>500025686</td>
-                            <td>Notebook</td>
-                            <td>3</td>
-                            <td>Tearapia Radiante</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 pinpin">
-              <div class="card lobicard lobicard-custom-control" data-sortable="true">
-                <div class="card-header">
-                  <div class="card-title custom_title">
-                    <h4>Ultimas salidas de Stock</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="Workslist">
-                    <div class="worklistdate">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Centro Atención</th>
-                            <th>Fecha</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="info1">
-                            <td>Lenovo Tiny</td>
-                            <td>1</td>
-                            <td>DF La Plata</td>
-                            <td>03/07/2023</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 pinpin">
-              <div class="card lobicard lobicard-custom-control" data-sortable="true">
-                <div class="card-header">
-                  <div class="card-title custom_title">
-                    <h4>Ultimas entradas de Stock</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="Workslist">
-                    <div class="worklistdate">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Razon Social</th>
-                            <th>Fecha</th>
-                            <th>Proveedor</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="info1">
-                            <td>Lenovo Tiny</td>
-                            <td>10</td>
-                            <td>Siglo XXI</td>
-                            <td>30/06/2023</td>
-                            <td>Tecnosophie</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <% } %>
           </div>
         </section>
         <!-- /.content -->

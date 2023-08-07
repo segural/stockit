@@ -65,53 +65,26 @@
             <i class="fa fa-dashboard"></i>
           </div>
           <div class="header-title">
-            <h1>Panel de administración de stock</h1>
-            <small>Información destacada</small>
+            <h1><%= categories.name %></h1>
+            <small>Información detallada en stock</small>
           </div>
         </section>
         <!-- Main content -->
         <section class="content">
-          <div class="row" style="justify-content: center;">
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div id="cardbox1">
-                <div class="statistic-box">
-                  <i class="fa fa-laptop fa-3x"></i>
-                  <div class="counter-number pull-right">
-                    <span style="font-size: 20px; font-weight: bold;">10</span>
-                  </div>
-                  <h3>Notebooks</h3>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div id="cardbox2">
-                <div class="statistic-box">
-                  <i class="fa fa-tv fa-3x"></i>
-                  <div class="counter-number pull-right">
-                    <span style="font-size: 20px; font-weight: bold;">8</span>
-                  </div>
-                  <h3>Monitores</h3>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div id="cardbox3">
-                <div class="statistic-box">
-                  <i class="fa fa-desktop fa-3x"></i>
-                  <div class="counter-number pull-right">
-                    <span style="font-size: 20px; font-weight: bold;">2</span>
-                  </div>
-                  <h3>Desktops</h3>
-                </div>
-              </div>
-            </div>
+          <div class="row justify-content-center" style="margin-bottom: 10px;">
+            <a data-toggle="modal" href="#addModal" style="margin-right: 10px;">
+              <button class="btn btn-add btn-sm"><i class="fa fa-plus"></i> Alta Stock - <%= categories.name %></button>
+            </a>
+            <a data-toggle="modal" href="#removeModal" style="margin-left: 10px;">
+              <button class="btn btn-add btn-sm"><i class="fa fa-minus"></i> Baja Stock - <%= categories.name %></button>
+            </a>
           </div>
-          <div class="row">
-            <div class="col-lg-6 pinpin">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 pinpin">
               <div class="card lobicard lobicard-custom-control" data-sortable="true">
                 <div class="card-header">
                   <div class="card-title custom_title">
-                    <h4>Ultimos equipos en inventario</h4>
+                    <h4><%= categories.name %></h4>
                   </div>
                 </div>
                 <div class="card-body">
@@ -120,122 +93,21 @@
                       <table class="table table-hover">
                         <thead>
                           <tr>
-                            <th>Categoría</th>
-                            <th>Nro. de máquina</th>
-                            <th>Centro de Atención</th>
-                            <th>Sector</th>
+                            <th>Marca</th>
+                            <th>Descripción</th>
+                            <th>Cantidad en Stock</th>
                           </tr>
                         </thead>
                         <tbody>
+                          <% for (product of products) {%>
                           <tr class="info1">
-                            <td>Desktop</td>
-                            <td>TE1024</td>
-                            <td>Terapia Radiante</td>
-                            <td>Recepción</td>
+                            <td><%= product.brand %></td>
+                            <td><%= product.description %></td>
+                            <% for (st of product.stock) {%>
+                            <td><%= st.quantity %></td>
+                            <% } %>
                           </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 pinpin">
-              <div class="card lobicard lobicard-custom-control" data-sortable="true">
-                <div class="card-header">
-                  <div class="card-title custom_title">
-                    <h4>Ultimos pedidos de compra</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="Workslist">
-                    <div class="worklistdate">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Fecha</th>
-                            <th>Solpe / OC</th>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Razón Social</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="info1">
-                            <td>05/07/2023</td>
-                            <td>500025686</td>
-                            <td>Notebook</td>
-                            <td>3</td>
-                            <td>Tearapia Radiante</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 pinpin">
-              <div class="card lobicard lobicard-custom-control" data-sortable="true">
-                <div class="card-header">
-                  <div class="card-title custom_title">
-                    <h4>Ultimas salidas de Stock</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="Workslist">
-                    <div class="worklistdate">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Centro Atención</th>
-                            <th>Fecha</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="info1">
-                            <td>Lenovo Tiny</td>
-                            <td>1</td>
-                            <td>DF La Plata</td>
-                            <td>03/07/2023</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 pinpin">
-              <div class="card lobicard lobicard-custom-control" data-sortable="true">
-                <div class="card-header">
-                  <div class="card-title custom_title">
-                    <h4>Ultimas entradas de Stock</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="Workslist">
-                    <div class="worklistdate">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Razon Social</th>
-                            <th>Fecha</th>
-                            <th>Proveedor</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="info1">
-                            <td>Lenovo Tiny</td>
-                            <td>10</td>
-                            <td>Siglo XXI</td>
-                            <td>30/06/2023</td>
-                            <td>Tecnosophie</td>
-                          </tr>
+                          <% } %>
                         </tbody>
                       </table>
                     </div>
@@ -244,6 +116,35 @@
               </div>
             </div>
           </div>
+          <!-- Modal to add-->
+          <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header modal-header-primary">
+                  <h4><i class="fa fa-plus m-r-5"></i> Agregar Stock - <%= categories.name %></h4>
+                </div>
+                <br>
+                <form action="/stock/addstock" method="POST" id="form" class="main-form">
+                <div class="col-md-12 form-group">
+                  <label class="control-label">Producto</label>
+                  <select class="form-control" name="product">
+                    <% for (product of products) { %>
+                    <option value="<%= product.id %>"> <%= product.brand %> - <%= product.description %> </option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="col-md-12 form-group">
+                  <label class="control-label">Cantidad</label>
+                  <input type="number" class="form-control" name="quantity" required />
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success btn-md">Enviar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          <!-- end of modal to add -->
         </section>
         <!-- /.content -->
       </div>
