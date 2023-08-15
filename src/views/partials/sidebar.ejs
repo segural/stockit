@@ -5,7 +5,7 @@
       <!-- sidebar menu -->
       <ul class="sidebar-menu">
          <li class="treeview">
-            <a href="/users/index"><i class="fa fa-tachometer"></i><span>Dashboard</span>
+            <a href="/dashboard"><i class="fa fa-tachometer"></i><span>Dashboard</span>
                <span class="pull-right-container">
                </span>
             </a>
@@ -18,6 +18,8 @@
             </a>
             <ul class="treeview-menu">
                <li class="<%= req.originalUrl === '/stock/list' ? 'active' : '' %>" ><a  href="/stock/list">Stock Cantidades</a></li>       
+               <li class="<%= req.originalUrl === '/stock/in' ? 'active' : '' %>" ><a  href="/stock/in">Listado Entradas</a></li>       
+               <li class="<%= req.originalUrl === '/stock/out' ? 'active' : '' %>" ><a  href="/stock/out">Listado Salidas</a></li>       
             </ul>
          </li>
          <li class="treeview">

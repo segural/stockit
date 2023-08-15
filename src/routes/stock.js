@@ -10,13 +10,15 @@ const stockController = require("../controllers/stockController.js");
 //Rutas de listados
 router.get("/list", stockController.stocklist);
 router.get("/detail/:name", stockController.stockdetail);
+router.get("/in", stockController.stocklistin);
+router.get("/out", stockController.stocklistout);
 
 //Rutas para add
-router.post("/addstock/", stockController.stockadd);
-//router.post("/additem/", stockController.itemadd);
+router.post("/addstock", stockController.stockadd);
+router.post("/addoc/:id", stockController.ocadd);
 
 //Rutas de edit
-//router.put("/editcategory/:id", stockController.categoriesedit);
+router.put("/deductstock", stockController.stockdeduct);
 //router.put("/edititem/:id", stockController.itemedit);
 
 //Rutas para eliminar

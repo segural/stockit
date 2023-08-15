@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
         as: "stock",
         foreignKey: "idProduct",
       });
+      products.hasMany(models.movements, {
+        as: "movement",
+        foreignKey: "idProduct",
+      });
     }
   }
   products.init({

@@ -28,9 +28,6 @@ const usersController = require("../controllers/usersController.js")
 router.post("/login", validateUserLogin, usersController.loginProcess);
 router.get("/logout", usersController.userLogout);
 
-//Rutas para: index
-router.get("/index", usersController.index);
-
 // Rutas para: reseteo de password
 router.post("/reset", validateUserReset, usersController.userReset);
 

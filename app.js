@@ -26,6 +26,7 @@ app.set("views", "./src/views/");
 
 //Requiero el/los archivo/s de rutas que se usarán para dirigir las paticiones:
 const mainRoutes = require("./src/routes/main.js");
+const dashRoutes = require("./src/routes/dash.js");
 const usersRoutes = require("./src/routes/users.js");
 const rolesRoutes = require("./src/routes/roles.js");
 const permissionsRoutes = require("./src/routes/permissions.js");
@@ -34,6 +35,7 @@ const stockRoutes = require("./src/routes/stock.js");
 
 //Indico para cada petición, el archivo de rutas que lo manejará:
 app.use("/", mainRoutes);
+app.use("/dashboard", dashRoutes);
 app.use("/users", usersRoutes);
 app.use("/roles", rolesRoutes);
 app.use("/permissions", permissionsRoutes);

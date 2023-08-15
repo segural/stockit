@@ -137,6 +137,22 @@
                   <label class="control-label">Cantidad</label>
                   <input type="number" class="form-control" name="quantity" required />
                 </div>
+                <div class="col-md-12 form-group">
+                  <label class="control-label">Proveedor</label>
+                  <select class="form-control" name="provider">
+                    <% for (provider of providers) { %>
+                    <option value="<%= provider.name %>"> <%= provider.name %> </option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="col-md-12 form-group">
+                  <label class="control-label">Razon Social que compró</label>
+                  <select class="form-control" name="company">
+                    <% for (company of companies) { %>
+                    <option value="<%= company.companyname %>"> <%= company.companyname %> </option>
+                    <% } %>
+                  </select>
+                </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-success btn-md">Enviar</button>
@@ -153,6 +169,49 @@
       <!-- Include footer -->
       <%- include('../partials/footer.ejs') %>
       <!-- footer end -->
+
+          <!-- Modal to deduct-->
+          <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header modal-header-primary">
+                  <h4><i class="fa fa-minus m-r-5"></i> Deducir Stock - <%= categories.name %></h4>
+                </div>
+                <br>
+                <form action="/stock/deductstock?_method=PUT" method="POST" id="form" class="main-form">
+                <div class="col-md-12 form-group">
+                  <label class="control-label">Producto</label>
+                  <select class="form-control" name="product">
+                    <% for (product of products) { %>
+                    <option value="<%= product.id %>"> <%= product.brand %> - <%= product.description %> </option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="col-md-12 form-group">
+                  <label class="control-label">Cantidad</label>
+                  <input type="number" class="form-control" name="quantity" required />
+                </div>
+                <div class="col-md-12 form-group">
+                  <label class="control-label">Centro de Atención</label>
+                  <select class="form-control" name="branch">
+                    <% for (branch of branchs) { %>
+                    <option value="<%= branch.name %>"> <%= branch.name %> </option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="col-md-12 form-group">
+                  <label class="control-label">Nro.Equipo/Sector</label>
+                  <input type="text" class="form-control" name="sector" required />
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success btn-md">Enviar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          <!-- end of modal to deduct -->
+
     </div>
     <!-- ./wrapper -->
     <!-- Start Core Plugins

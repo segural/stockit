@@ -21,6 +21,10 @@ const productController = {
         description: req.body.description,
         idCategory: req.body.category
       })
+    await db.stock.create({
+      quantity: 0,
+      idProduct: product.id
+    })
     res.redirect("/products/items")
   },
 
@@ -37,6 +41,11 @@ const productController = {
   itemdestroy: async (req, res) => {
     let productToDelete = await db.products.findByPk(req.params.id);
     await productToDelete.destroy();
+    let stockToDelete = await db.stock.findOne({
+      where:
+          {idProduct: req.params.id}
+    })
+    await stockToDelete.destroy();
     res.redirect("/products/items");
   },
 

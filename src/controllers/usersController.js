@@ -12,10 +12,6 @@ const users = db.user;
 // Métodos del controlador
 const usersController ={
 
-    index: (req, res) => {
-        res.render("./dashboard/home", {req});
-    },
-
     loginProcess: async (req, res) => {
         let errors = validationResult(req);        
         let userToLogin = undefined;
@@ -77,7 +73,7 @@ const usersController ={
         if (req.body.rememberMe != undefined){
             res.cookie("rememberMe", userToLogin.user, {maxAge: 120000})
         };
-        res.redirect("/users/index");
+        res.redirect("/dashboard");
 
     },
     userList: async (req,res) => {
@@ -131,7 +127,7 @@ const usersController ={
         } else {
             await userToEdit.update({ active: true});
         }
-        res.redirect('/users/list')
+        res.redirect('/dashboard')
     },
     userStore: async (req,res) =>{
         let errors = validationResult(req);

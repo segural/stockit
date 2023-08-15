@@ -62,23 +62,18 @@
             <i class="fa fa-user"></i>
           </div>
           <div class="header-title">
-            <h1>Usuarios</h1>
-            <small>Lista de usuarios</small>
+            <h1>Stock General</h1>
+            <small>Movimientos de Stock</small>
           </div>
         </section>
         <!-- Main content -->
         <section class="content">
           <div class="row">
             <div class="col-lg-12">
-              <div class="btn-group d-flex" role="group">
-                <div class="buttonexport">
-                  <a href="/users/new" class="btn btn-add"><i class="fa fa-plus"></i> Nuevo usuario</a>
-                </div>
-              </div>
               <div class="card" id="lobicard-custom-control" data-sortable="true">
                 <div class="card-header">
                   <div class="card-title custom_title">
-                    <h4>Detalles de los usuarios</h4>
+                    <h4>Detalles de Movimientos de Stock Entrante</h4>
                   </div>
                 </div>
                 <div class="card-body">
@@ -89,68 +84,21 @@
                     <table id="userList" class="table table-bordered table-striped table-hover">
                       <thead class="back_table_color">
                         <tr class="info">
-                          <th>Nombre</th>
-                          <th>Apellido</th>
-                          <th>Usuario</th>
-                          <th>e-mail</th>
-                          <th>Rol asignado</th>
-                          <th class="dt-center">Habilitado</th>
-                          <th class="dt-center">Acciones</th>
+                          <th>Producto</th>
+                          <th>Cantidad</th>
+                          <th>Razon Social</th>
+                          <th>Fecha</th>
+                          <th>Proveedor</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <% for( user of users ) { %>
-                        <tr>
-                          <td><%= user.firstName %></td>
-                          <td><%= user.lastName %></td>
-                          <td><%= user.user %></td>
-                          <td><%= user.email %></td>
-                          <td>
-                            <% for (let i = 0; i < user.roles.length; i++) { %>
-                            <label class="label-custom label label-default"><%= user.roles[i].name %></label>
-                            <% } %>
-                          </td>
-                          <td class="dt-center">
-                            <% if (user.active) { %>
-                            <a href="/users/<%= user.id %>/toggle"
-                              ><button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            </a>
-                            <% } else {%>
-                            <a href="/users/<%= user.id %>/toggle"
-                              ><button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
-                            </a>
-                            <% } %>
-                          </td>
-                          <td class="dt-center">
-                            <a href="/users/<%= user.id %>/edit">
-                              <button class="btn btn-add btn-sm"><i class="fa fa-pencil"></i></button>
-                            </a>
-                            <a data-toggle="modal" href="#myModal-<%= user.id %>">
-                              <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button>
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal-<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                              <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header modal-header-primary">
-                                    <h4><i class="fa fa-trash m-r-5"></i> Confirmar la eliminación de usuario</h4>
-                                  </div>
-                                  <div class="modal-body">
-                                    <h6>Confirma la eliminación del usuario <b><%= user.user %></b> ?</h6>
-                                    <br />
-                                    <h6>Esta acción no se puede deshacer.</h6>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
-                                    <form action="/users/<%= user.id %>?_method=DELETE" method="POST" id="form">
-                                      <button type="submit" class="btn btn-danger btn-md">Eliminar</button>
-                                    </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- modal -->
-                          </td>
+                        <% for (stock of stockin) {%>
+                        <tr class="info1">
+                          <td><%= stock.product.description %></td>
+                          <td><%= stock.quantity %></td>
+                          <td><%= stock.companyname %></td>
+                          <td><%= Intl.DateTimeFormat('es-AR').format(new Date(stock.createdAt)) %></td>
+                          <td><%= stock.provider %></td>
                         </tr>
                         <% } %>
                       </tbody>
