@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Control de Stock</title>
     <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="/assets/dist/img/ico/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/favicon.png">
     <!-- Start Global Mandatory Style
          =====================================================================-->
     <!-- lobicard tather css -->
@@ -88,8 +88,8 @@
                             <label class="control-label">Permisos asociados</label>
                             <div class="col-md-9 form-group">
                               <select multiple="multiple" class="multi-select" id="my_multi_select1" name="permissions">
-                                <% for( permission of permissions ) { %>
-                                <option value="<%= permission.id" %>"> <%=permission.name%></option>
+                                <% for (permission of permissions) { %>
+                                <option value="<%= permission.id %>"> <%= permission.name %></option>
                                 <% } %>
                               </select>
                             </div>

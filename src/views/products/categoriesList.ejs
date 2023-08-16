@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Control de Stock</title>
     <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="/assets/dist/img/ico/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/favicon.png">
     <!-- Start Global Mandatory Style
          =====================================================================-->
     <!-- lobicard tather css -->
@@ -131,9 +131,6 @@
                             <a data-toggle="modal" href="#editModal-<%= category.id %>">
                               <button class="btn btn-add btn-sm"><i class="fa fa-pencil"></i></button>
                             </a>
-                            <a data-toggle="modal" href="#deleteModal-<%= category.id %>">
-                              <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button>
-                            </a>
                             <!-- Modal to edit-->
                             <div class="modal fade" id="editModal-<%= category.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
@@ -160,28 +157,6 @@
                               </div>
                             </div>
                             <!-- end of modal to edit -->
-                            <!-- Modal to delete-->
-                            <div class="modal fade" id="deleteModal-<%= category.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                              <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header modal-header-primary">
-                                    <h4><i class="fa fa-trash m-r-5"></i> Eliminación de la categoría</h4>
-                                  </div>
-                                  <div class="modal-body">
-                                    <h6>Confirma la eliminación de la categoría <b><%= category.name %></b> ?</h6>
-                                    <br>
-                                    <h6>Esta acción no se puede deshacer.</h6>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
-                                    <form action="/products/destroycategory/<%= category.id %>?_method=DELETE" method="POST" id="form">
-                                      <button type="submit" class="btn btn-danger btn-md">Eliminar</button>
-                                    </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- end of modal to delete -->
                           </td>
                         </tr>
                         <% } %>

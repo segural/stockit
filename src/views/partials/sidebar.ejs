@@ -10,18 +10,21 @@
                </span>
             </a>
          </li>
-         <li class="treeview">
-            <a href="javascript:;" class="<%= req.originalUrl.includes('/stock')? 'active' : '' %>">
-               <i class="fa fa-exchange"></i>
-               <span>ABM Stock</span>
-               <span class="pull-right-container"><i class="fa fa-angle-left float-right"></i></span>
-            </a>
-            <ul class="treeview-menu">
-               <li class="<%= req.originalUrl === '/stock/list' ? 'active' : '' %>" ><a  href="/stock/list">Stock Cantidades</a></li>       
-               <li class="<%= req.originalUrl === '/stock/in' ? 'active' : '' %>" ><a  href="/stock/in">Listado Entradas</a></li>       
-               <li class="<%= req.originalUrl === '/stock/out' ? 'active' : '' %>" ><a  href="/stock/out">Listado Salidas</a></li>       
-            </ul>
-         </li>
+         <% if (req.session.userCan.includes("ABM_Stock")) {%>
+            <li class="treeview">
+               <a href="javascript:;" class="<%= req.originalUrl.includes('/stock')? 'active' : '' %>">
+                  <i class="fa fa-exchange"></i>
+                  <span>ABM Stock</span>
+                  <span class="pull-right-container"><i class="fa fa-angle-left float-right"></i></span>
+               </a>
+               <ul class="treeview-menu">
+                  <li class="<%= req.originalUrl === '/stock/list' ? 'active' : '' %>" ><a  href="/stock/list">Stock Cantidades</a></li>       
+                  <li class="<%= req.originalUrl === '/stock/in' ? 'active' : '' %>" ><a  href="/stock/in">Listado Entradas</a></li>       
+                  <li class="<%= req.originalUrl === '/stock/out' ? 'active' : '' %>" ><a  href="/stock/out">Listado Salidas</a></li>       
+               </ul>
+            </li>
+         <% } %>
+         <% if (req.session.userCan.includes("Inventarios")) {%>
          <li class="treeview">
             <a href="javascript:;" class="<%= req.originalUrl.includes('/inventory')? 'active' : '' %>">
                <i class="fa fa-list-ol"></i>
@@ -34,6 +37,7 @@
                <li class="<%= req.originalUrl === '/inventory/server' ? 'active' : '' %>" ><a  href="/inventory/server">Servidores</a></li>       
             </ul>
          </li>
+         <% } %>
          <li class="treeview">
             <a href="javascript:;" class="<%= req.originalUrl.includes('/products')? 'active' : '' %>">
                <i class="fa fa-laptop"></i>
@@ -41,8 +45,11 @@
                <span class="pull-right-container"><i class="fa fa-angle-left float-right"></i></span>
             </a>
             <ul class="treeview-menu">
-               <li class="<%= req.originalUrl === '/products/items' ? 'active' : '' %>" ><a  href="/products/items">Productos</a></li>       
-               <li class="<%= req.originalUrl === '/products/categories' ? 'active' : '' %>" ><a  href="/products/categories">Categorías</a></li>             
+               <% if (req.session.userCan.includes("ABM_Productos")) {%>
+               <li class="<%= req.originalUrl === '/products/items' ? 'active' : '' %>" ><a  href="/products/items">Productos</a></li>
+               <% } if (req.session.userCan.includes("ABM_Categorias")) { %>       
+               <li class="<%= req.originalUrl === '/products/categories' ? 'active' : '' %>" ><a  href="/products/categories">Categorías</a></li>
+               <% } %>             
             </ul>
          </li>
          <% if (req.session.userCan.includes("sistema_administrar")) { %>
@@ -53,13 +60,11 @@
                      <span class="pull-right-container"><i class="fa fa-angle-left float-right"></i></span>
                   </a>
                   <ul class="treeview-menu">
-                     <% if (req.session.userCan.includes("sistema_administrar")) { %>
+                     <% if (req.session.userCan.includes("ABM_Usuarios")) { %>
                      <li class="<%= req.originalUrl === '/users/list' ? 'active' : '' %>" ><a  href="/users/list">Usuarios</a></li>
                      <% } %>
-                     <% if (req.session.userCan.includes("sistema_administrar")) { %>
+                     <% if (req.session.userCan.includes("Roles_Permisos")) { %>
                         <li class="<%= req.originalUrl.includes('/roles') ? 'active' : '' %>" ><a  href="/roles/list">Roles</a></li>
-                     <% } %>
-                     <% if (req.session.userCan.includes("sistema_administrar") && req.session.userCan.includes("sistema_administrar")) { %>
                         <li class="<%= req.originalUrl.includes('/permissions') ? 'active' : '' %>"><a  href="/permissions/list">Permisos</a></i></li>
                      <% } %>                    
                   </ul>

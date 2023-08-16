@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Control de Stock</title>
     <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="/assets/dist/img/ico/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/favicon.png">
     <!-- Start Global Mandatory Style
          =====================================================================-->
     <!-- lobicard tather css -->
@@ -141,7 +141,7 @@
                               <a data-toggle="modal" href="#editModal-<%= product.id %>">
                                 <button class="btn btn-add btn-sm"><i class="fa fa-pencil"></i></button>
                               </a>
-                              <a data-toggle="modal" href="#deleteModal-<%= product.id %>">
+                              <a data-toggle="modal" href="#disableModal-<%= product.id %>">
                                 <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button>
                               </a>
                             <!-- Modal to edit-->
@@ -179,8 +179,8 @@
                               </div>
                             </div>
                             <!-- end of modal to edit -->
-                            <!-- Modal to delete-->
-                            <div class="modal fade" id="deleteModal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <!-- Modal to disable product-->
+                            <div class="modal fade" id="disableModal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header modal-header-primary">
@@ -193,14 +193,14 @@
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
-                                    <form action="/products/destroyitem/<%= product.id %>?_method=DELETE" method="POST" id="form">
+                                    <form action="/products/disableitem/<%= product.id %>?_method=PUT" method="POST" id="form">
                                       <button type="submit" class="btn btn-danger btn-md">Eliminar</button>
                                     </form>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            <!-- end of modal to delete -->
+                            <!-- end of modal to disable -->
                           </td>
                         </tr>
                         <% } %>

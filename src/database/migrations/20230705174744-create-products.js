@@ -15,6 +15,9 @@ module.exports = {
       category: {
         type: Sequelize.STRING
       },
+      enable: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

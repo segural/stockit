@@ -19,8 +19,11 @@ router.post("/additem/", productsController.itemadd);
 router.put("/editcategory/:id", productsController.categoriesedit);
 router.put("/edititem/:id", productsController.itemedit);
 
+//Rutas de disable
+router.put("/disableitem/:id", productsController.itemdisable);
+
 //Rutas para eliminar
-router.delete("/destroycategory/:id", productsController.categoriesdestroy);
-router.delete("/destroyitem/:id", productsController.itemdestroy);
+//router.delete("/destroycategory/:id", productsController.categoriesdestroy);
+//router.delete("/destroyitem/:id", productsController.itemdestroy);
 
 module.exports = router;

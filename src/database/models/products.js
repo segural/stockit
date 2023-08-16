@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     brand: DataTypes.STRING,
     idCategory: DataTypes.INTEGER,
+    enable: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'products',

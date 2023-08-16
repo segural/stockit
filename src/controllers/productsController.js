@@ -8,6 +8,7 @@ const productController = {
   productslist: async (req, res) => {
     let categories = await db.categories.findAll();
     let products = await db.products.findAll({
+      where: {enable: 1},
       include: [
         {association:"category"}
       ]
@@ -19,7 +20,8 @@ const productController = {
     let product = await db.products.create({
         brand: req.body.brand,
         description: req.body.description,
-        idCategory: req.body.category
+        idCategory: req.body.category,
+        enable: true
       })
     await db.stock.create({
       quantity: 0,
@@ -38,15 +40,12 @@ const productController = {
     res.redirect("/products/items")
   },
 
-  itemdestroy: async (req, res) => {
-    let productToDelete = await db.products.findByPk(req.params.id);
-    await productToDelete.destroy();
-    let stockToDelete = await db.stock.findOne({
-      where:
-          {idProduct: req.params.id}
+  itemdisable: async (req, res) => {
+    let itemToDisable = await db.products.findByPk(req.params.id);
+    itemToDisable.update({
+      enable: false,
     })
-    await stockToDelete.destroy();
-    res.redirect("/products/items");
+    res.redirect("/products/items")
   },
 
 //ABM Categorias
@@ -70,12 +69,6 @@ const productController = {
       description: req.body.description
     })
     res.redirect("/products/categories")
-  },
-
-  categoriesdestroy: async (req, res) => {
-    let categoryToDelete = await db.categories.findByPk(req.params.id);
-    await categoryToDelete.destroy();
-    res.redirect("/products/categories");
   },
 };
 
