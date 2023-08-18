@@ -36,7 +36,7 @@ const usersController ={
                 if (user.active) {
                     if (bcrypt.compareSync(req.body.password, user.password)) {
                         if (user.resetFlag) {
-                            return res.render ('./users/userReset', { errors:{ resetPass:
+                            return res.render ('./users/userReset.ejs', { errors:{ resetPass:
                                 {msg: "Debe ingresar una nueva contraseña"}
                             }, old: req.body });
                         } else {
@@ -44,17 +44,17 @@ const usersController ={
                         };
                     };
                     } else {
-                        return res.render ('./users/login', { errors:{ userInactive:
+                        return res.render ('./users/login.ejs', { errors:{ userInactive:
                             {msg: "Su usuario fue deshabilitado, comuníquese con el administrador"}
                         }, old: req.body });
                     };
             };              
         } else {
-            return res.render ('./users/login', {errors:errors.mapped(), old: req.body});
+            return res.render ('./users/login.ejs', {errors:errors.mapped(), old: req.body});
         };
 
         if (userToLogin == undefined){
-            return res.render ('./users/login', {errors:{ noUser:
+            return res.render ('./users/login.ejs', {errors:{ noUser:
                 {msg: "Credenciales inválidas"}
             }, old: req.body});
         };
@@ -91,7 +91,7 @@ const usersController ={
                     ]
                 }
             });
-            res.render("./users/userList", {req, users, roles});
+            res.render("./users/userList.ejs", {req, users, roles});
         } else {
             let usersToFilter = await db.user.findAll({
                 include: {
@@ -113,12 +113,12 @@ const usersController ={
                     users.push(user)
                 };
             }
-            res.render("./users/userList", {req, users, roles});
+            res.render("./users/userList.ejs", {req, users, roles});
         };        
     },
     userNew: async (req,res) => {
         let roles=await db.role.findAll({});
-        res.render("./users/userNew", {req, roles})
+        res.render("./users/userNew.ejs", {req, roles})
     },
     userToggle: async (req,res) => {
         let userToEdit = await db.user.findByPk (req.params.id);
@@ -166,7 +166,7 @@ const usersController ={
             } else {
                 let roles = await db.role.findAll();
                 return res.render (
-                    './users/userNew',
+                    './users/userNew.ejs',
                     {req, roles, errors:{ user: {msg: "Ya existe alguien registrado con ese user"}},
                     old: req.body}
                 );
@@ -175,7 +175,7 @@ const usersController ={
         } else{
             let roles=await db.role.findAll({});
             console.log(req.body.roles)
-            return res.render ('./users/userNew', {req, roles, errors:errors.mapped(), old: req.body});
+            return res.render ('./users/userNew.ejs', {req, roles, errors:errors.mapped(), old: req.body});
         };        
     },
     userEdit: async (req,res) => {
@@ -186,7 +186,7 @@ const usersController ={
 			]});
         let selectedRoles =[];
         userToEdit.roles.forEach((role) => {selectedRoles.push(role.id)});
-        res.render("./users/userEdit", {req, userToEdit, roles, selectedRoles})
+        res.render("./users/userEdit.ejs", {req, userToEdit, roles, selectedRoles})
     },
     userUpdate: async (req,res) => {
         let errors = validationResult(req);
@@ -232,7 +232,7 @@ const usersController ={
             res.redirect('/users/list');
             
         } else{
-            return res.render ('./users/userEdit', {req, errors:errors.mapped(), userToEdit, roles, selectedRoles});
+            return res.render ('./users/userEdit.ejs', {req, errors:errors.mapped(), userToEdit, roles, selectedRoles});
         };
     },
     userDestroy: async (req,res) => {
@@ -258,13 +258,13 @@ const usersController ={
                     }
                 );
             } else {
-                return res.render ('./users/userReset', { errors:{ resetPass:
+                return res.render ('./users/userReset.ejs', { errors:{ resetPass:
                     {msg: "Las contraseñas no coinciden"}
                 }, old: req.body });
             };
-            res.render("./users/login")           
+            res.render("./users/login.ejs")           
         } else{
-            return res.render ('./users/userReset', {errors:errors.mapped(), old: req.body});
+            return res.render ('./users/userReset.ejs', {errors:errors.mapped(), old: req.body});
         }
     },
     userLogout: (req, res) => {        

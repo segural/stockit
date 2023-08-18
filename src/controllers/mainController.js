@@ -5,7 +5,7 @@ const { Op } = require("sequelize");
 
 const mainController = {
   login: (req, res) => {
-    res.render("./users/login");
+    res.render("./users/login.ejs");
   },
 };
 

@@ -13,7 +13,7 @@ const productController = {
         {association:"category"}
       ]
     })
-    res.render("./products/productsList" , {req, products, categories});
+    res.render("./products/productsList.ejs" , {req, products, categories});
   },
   
   itemadd: async (req, res) => {
@@ -51,7 +51,7 @@ const productController = {
 //ABM Categorias
   categorieslist: async (req, res) => {
     let categories = await db.categories.findAll()
-    res.render("./products/categoriesList" , {req, categories});
+    res.render("./products/categoriesList.ejs" , {req, categories});
   },
 
   categoriesadd: async (req, res) => {

@@ -22,7 +22,7 @@ const rolesController ={
                     {association:"permissions"}
                 ]}
             );
-            res.render("./roles/roleList", {req, roles})
+            res.render("./roles/roleList.ejs", {req, roles})
         } else {
             let roles = await db.role.findAll({
                 include: [
@@ -34,13 +34,13 @@ const rolesController ={
                     }
                   }
             });
-            res.render("./roles/roleList", {req, roles})
+            res.render("./roles/roleList.ejs", {req, roles})
         }
     },
 
     roleNew: async (req,res) => {
         let permissions = await db.permission.findAll({});
-        res.render("./roles/roleNew", {req, permissions});
+        res.render("./roles/roleNew.ejs", {req, permissions});
     },
 
     roleStore: async (req,res) => {
@@ -62,7 +62,7 @@ const rolesController ={
 			]});
         let selectedPermissions =[];
         roleToEdit.permissions.forEach((permission) => {selectedPermissions.push(permission.id)});
-        res.render("./roles/roleEdit", {req, roleToEdit, permissions, selectedPermissions})
+        res.render("./roles/roleEdit.ejs", {req, roleToEdit, permissions, selectedPermissions})
     },
 
     roleUpdate: async (req,res) => {

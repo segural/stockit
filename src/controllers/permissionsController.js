@@ -19,12 +19,12 @@ const permissionsController ={
 				{association:"roles"}
 			]}
         );        
-        res.render("./permissions/permissionList", {req, permissions})
+        res.render("./permissions/permissionList.ejs", {req, permissions})
     },    
 
     permissionNew: async (req,res) => {
         let roles = await db.role.findAll({});
-        res.render("./permissions/permissionNew", {req, roles});
+        res.render("./permissions/permissionNew.ejs", {req, roles});
     },
 
     permissionStore: async (req,res) => {
@@ -44,7 +44,7 @@ const permissionsController ={
         );
         let selectedRoles =[];
         permissionToEdit.roles.forEach((role) => {selectedRoles.push(role.id)});
-        res.render("./permissions/permissionEdit", {req, permissionToEdit, roles, selectedRoles})
+        res.render("./permissions/permissionEdit.ejs", {req, permissionToEdit, roles, selectedRoles})
     },
 
     permissionUpdate: async (req,res) => {

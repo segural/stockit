@@ -18,7 +18,7 @@ const dashController = {
       limit: 5,
       order: [['id','DESC']]
     })
-    res.render("./dashboard/home", {req, stockin, stockout});
+    res.render("./dashboard/home.ejs", {req, stockin, stockout});
 },
 };
 

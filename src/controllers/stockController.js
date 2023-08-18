@@ -10,7 +10,7 @@ const stockController = {
         let stocks = await db.sequelize.query("SELECT c.name as 'category',SUM(s.quantity) as 'quantity' FROM stockit.stocks s INNER JOIN stockit.products p on s.idProduct = p.id INNER JOIN stockit.categories c on p.idCategory = c.id GROUP BY c.name", {
             type: QueryTypes.SELECT
         });
-        res.render("./stock/stockList" , {req, stocks});
+        res.render("./stock/stockList.ejs" , {req, stocks});
     },
 
     stocklistin: async (req, res) => {
@@ -19,7 +19,7 @@ const stockController = {
             include:[{association:"product"}],
             order: [['id','DESC']]
           })
-        res.render("./stock/inboundstock", {req, stockin});
+        res.render("./stock/inboundstock.ejs", {req, stockin});
     },
 
     stocklistout: async (req, res) => {
@@ -28,7 +28,7 @@ const stockController = {
             include:[{association:"product"},{association:"oc"}],
             order: [['id','DESC']]
           })
-        res.render("./stock/outboundStock", {req, stockout});
+        res.render("./stock/outboundStock.ejs", {req, stockout});
     },
     
     stockdetail: async (req, res) => {
@@ -48,7 +48,7 @@ const stockController = {
         let companies = await db.companies.findAll();
         let providers = await db.provider.findAll();
         let branchs = await db.branch.findAll();
-        res.render("./stock/stockDetail" , {req, categories, products, companies, providers, branchs});
+        res.render("./stock/stockDetail.ejs" , {req, categories, products, companies, providers, branchs});
     },
 
     stockadd: async (req, res) => {
