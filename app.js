@@ -1,4 +1,4 @@
-//Requiero paquetes y genero las variables(espress,path):
+﻿//Requiero paquetes y genero las variables(espress,path):
 const express = require("express");
 require("dotenv").config();
 const app = express();
@@ -42,7 +42,7 @@ app.use("/permissions", permissionsRoutes);
 app.use("/products", productsRoutes);
 app.use("/stock", stockRoutes);
 
-//Inicio servidor en puerto 3000
-app.listen(process.env.PORT || 3000, function () {
-  console.log(`Servidor corriendo en puerto ${process.env.PORT || 3000}`);
+//Inicio servidor en puerto 8000
+app.listen(process.env.PORT || 8000, function () {
+  console.log(`Servidor corriendo en puerto ${process.env.PORT || 8000}`);
 });
