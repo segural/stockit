@@ -84,20 +84,20 @@
                     <table id="userList" class="table table-bordered table-striped table-hover">
                       <thead class="back_table_color">
                         <tr class="info">
+                          <th class="dt-center">Fecha</th>
                           <th>Producto</th>
                           <th>Cantidad</th>
                           <th>Razon Social</th>
-                          <th>Fecha</th>
                           <th>Proveedor</th>
                         </tr>
                       </thead>
                       <tbody>
                         <% for (stock of stockin) {%>
                         <tr class="info1">
+                          <td class="dt-center"><%= Intl.DateTimeFormat('es-AR').format(new Date(stock.createdAt)) %></td>
                           <td><%= stock.product.description %></td>
                           <td><%= stock.quantity %></td>
                           <td><%= stock.companyname %></td>
-                          <td><%= Intl.DateTimeFormat('es-AR').format(new Date(stock.createdAt)) %></td>
                           <td><%= stock.provider %></td>
                         </tr>
                         <% } %>
