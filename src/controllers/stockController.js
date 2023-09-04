@@ -74,6 +74,7 @@ const stockController = {
             idProduct: req.body.product,
             quantity: req.body.quantity,
             companyname: req.body.company,
+            user: req.session.userLogged.user
         })
         res.redirect('/stock/list');
     },
@@ -95,6 +96,7 @@ const stockController = {
             quantity: req.body.quantity,
             companyname: null,
             notes: req.body.sector,
+            user: req.session.userLogged.user,
         })
         res.redirect('/stock/list');
     },
