@@ -32,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     companyname: {type:DataTypes.STRING, allowNull: true},
     notes: {type:DataTypes.STRING, allowNull: true},
     idOC: {type:DataTypes.INTEGER, allowNull: true},
+    user: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'movements',

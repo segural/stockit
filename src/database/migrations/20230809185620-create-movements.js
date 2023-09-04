@@ -33,6 +33,9 @@ module.exports = {
       idOC: {
         type: Sequelize.INTEGER
       },
+      user: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
