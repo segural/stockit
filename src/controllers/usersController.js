@@ -127,7 +127,7 @@ const usersController ={
         } else {
             await userToEdit.update({ active: true});
         }
-        res.redirect('/dashboard')
+        res.redirect('/users/list')
     },
     userStore: async (req,res) =>{
         let errors = validationResult(req);
