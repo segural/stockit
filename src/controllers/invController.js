@@ -136,6 +136,20 @@ const invController = {
         res.redirect("/inventory/server")
     },
 
+    celladd: async (req,res) => {
+        await db.cellphone.create({
+            phonenumber: req.body.phonenumber,
+            brand: req.body.brand, 
+            model: req.body.model,
+            sector: req.body.sector,
+            imei: req.body.imei,
+            deliverydate: req.body.deliverydate,
+            user:  req.session.userLogged.user,
+            status: 1
+        })
+        res.redirect('/inventory/cellphone')
+    },
+
     editcomputer: async (req,res) => {
         let cputoedit = await db.inventory.findByPk(req.params.id);
         await cputoedit.update({

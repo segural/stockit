@@ -20,6 +20,7 @@ router.get("/addserver", invController.addserverform);
 router.post("/addcomputer/add", invController.storecomputer);
 router.post("/addserver/add", invController.storeserver);
 router.post("/due/add", invController.dueadd);
+router.post("/cellphone/add", invController.celladd);
 
 //Rutas de edit
 router.put("/dueedit/:id", invController.dueedit);

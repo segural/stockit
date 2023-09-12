@@ -190,6 +190,47 @@
                     </table>
                   </div>
                 </div>
+                <!-- Modal to add-->
+                <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header modal-header-primary">
+                        <h4><i class="fa fa-plus m-r-5"></i> Agregar un nuevo equipo/linea</h4>
+                      </div>
+                      <br>
+                      <form action="/inventory/cellphone/add" method="POST" id="form" class="main-form">
+                      <div class="col-md-12 form-group">
+                        <label class="control-label">Numero de Linea</label>
+                        <input type="number" class="form-control" name="phonenumber" required />
+                      </div>
+                      <div class="col-md-12 form-group">
+                        <label class="control-label">Marca</label>
+                        <input type="text" class="form-control" name="brand" required />
+                      </div>
+                      <div class="col-md-12 form-group">
+                        <label class="control-label">Modelo</label>
+                        <input type="text" class="form-control" name="model" required />
+                      </div>
+                      <div class="col-md-12 form-group">
+                        <label class="control-label">Usuario/Sector</label>
+                        <input type="text" class="form-control" name="sector" required />
+                      </div>
+                      <div class="col-md-12 form-group">
+                        <label class="control-label">IMEI</label>
+                        <input type="text" class="form-control" name="imei" required />
+                      </div>
+                      <div class="col-md-12 form-group">
+                        <label class="control-label">Fecha de entrega</label>
+                        <input type="date" class="form-control" name="deliverydate" required />
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
+                          <button type="submit" class="btn btn-success btn-md">Enviar</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                <!-- end of modal to add -->
               </div>
             </div>
           </div>
