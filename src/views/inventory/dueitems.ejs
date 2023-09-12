@@ -103,7 +103,7 @@
                         <tr class="info1">
                           <td style="display: none;"><%= item.datenumber %></td>
                           <td class="dt-center">
-                            <%  let duedate = new Date(item.duedate);duedate = new Date(duedate.getFullYear(),duedate.getMonth(),duedate.getDate() + 1) %> 
+                            <%  let duedate = new Date(item.duedate);duedate = new Date(duedate.getFullYear(),duedate.getMonth(),duedate.getDate() + 2) %> 
                             <%= Intl.DateTimeFormat('en-GB').format(new Date(duedate)) %>
                           </td>
                           <td class="dt-center">

@@ -109,7 +109,7 @@
                           <td class="dt-center"><%= cell.sector %></td>
                           <td class="dt-center"><%= cell.imei %></td>
                           <td class="dt-center">
-                          <%  let deliverydate = new Date(cell.deliverydate);deliverydate = new Date(deliverydate.getFullYear(),deliverydate.getMonth(),deliverydate.getDate() + 1) %> 
+                          <%  let deliverydate = new Date(cell.deliverydate);deliverydate = new Date(deliverydate.getFullYear(),deliverydate.getMonth(),deliverydate.getDate() + 2) %> 
                           <%= Intl.DateTimeFormat('en-GB').format(new Date(deliverydate)) %>
                           </td>
                           <td class="dt-center">

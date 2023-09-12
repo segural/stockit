@@ -394,3 +394,116 @@ Cannot read properties of null (reading 'image')
     at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
     at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
     at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+TypeError: C:\Webserver\stockit\src\views\stock\stockList.ejs:53
+    51|     <div class="wrapper">
+    52|       <!-- Include Header -->
+ >> 53|       <%- include('../partials/header.ejs') %>
+    54|       <!--header end-->
+    55| 
+    56|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\stock\\stockList.ejs":12:17)
+    at stockList (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error
+    at Query.run (C:\Webserver\stockit\node_modules\sequelize\lib\dialects\mssql\query.js:107:25)
+    at C:\Webserver\stockit\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MSSqlQueryInterface.insert (C:\Webserver\stockit\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async due.save (C:\Webserver\stockit\node_modules\sequelize\lib\model.js:2490:35)
+    at async due.create (C:\Webserver\stockit\node_modules\sequelize\lib\model.js:1362:12)
+    at async dueadd (C:\Webserver\stockit\src\controllers\invController.js:21:25) {
+  name: 'SequelizeDatabaseError',
+  parent: RequestError: String or binary data would be truncated in table 'stockit.dbo.dues', column 'branch'. Truncated value: 'M'.
+      at RequestTokenHandler.onErrorMessage (C:\Webserver\stockit\node_modules\tedious\lib\token\handler.js:294:21)
+      at Readable.<anonymous> (C:\Webserver\stockit\node_modules\tedious\lib\token\token-stream-parser.js:21:33)
+      at Readable.emit (node:events:513:28)
+      at addChunk (node:internal/streams/readable:324:12)
+      at readableAddChunk (node:internal/streams/readable:297:9)
+      at Readable.push (node:internal/streams/readable:234:10)
+      at next (node:internal/streams/from:98:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    code: 'EREQUEST',
+    number: 2628,
+    state: 1,
+    class: 16,
+    serverName: 'ARSQLEXP\\SQLEXPRESS',
+    procName: '',
+    lineNumber: 1,
+    sql: 'INSERT INTO [dues] ([branch],[who],[duedate],[description],[status],[user],[datenumber],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[branch],INSERTED.[who],INSERTED.[duedate],INSERTED.[description],INSERTED.[status],INSERTED.[user],INSERTED.[datenumber],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8);',
+    parameters: {
+      '0': 'Manage Engine',
+      '1': 'Global Gate',
+      '2': '2023-09-30 00:00:00.000 +00:00',
+      '3': 'Renovación Licencias Service Desk Ingeniería',
+      '4': 1,
+      '5': 'segural',
+      '6': 1696032000000,
+      '7': '2023-09-12 16:19:49.771 +00:00',
+      '8': '2023-09-12 16:19:49.771 +00:00'
+    }
+  },
+  original: RequestError: String or binary data would be truncated in table 'stockit.dbo.dues', column 'branch'. Truncated value: 'M'.
+      at RequestTokenHandler.onErrorMessage (C:\Webserver\stockit\node_modules\tedious\lib\token\handler.js:294:21)
+      at Readable.<anonymous> (C:\Webserver\stockit\node_modules\tedious\lib\token\token-stream-parser.js:21:33)
+      at Readable.emit (node:events:513:28)
+      at addChunk (node:internal/streams/readable:324:12)
+      at readableAddChunk (node:internal/streams/readable:297:9)
+      at Readable.push (node:internal/streams/readable:234:10)
+      at next (node:internal/streams/from:98:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    code: 'EREQUEST',
+    number: 2628,
+    state: 1,
+    class: 16,
+    serverName: 'ARSQLEXP\\SQLEXPRESS',
+    procName: '',
+    lineNumber: 1,
+    sql: 'INSERT INTO [dues] ([branch],[who],[duedate],[description],[status],[user],[datenumber],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[branch],INSERTED.[who],INSERTED.[duedate],INSERTED.[description],INSERTED.[status],INSERTED.[user],INSERTED.[datenumber],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8);',
+    parameters: {
+      '0': 'Manage Engine',
+      '1': 'Global Gate',
+      '2': '2023-09-30 00:00:00.000 +00:00',
+      '3': 'Renovación Licencias Service Desk Ingeniería',
+      '4': 1,
+      '5': 'segural',
+      '6': 1696032000000,
+      '7': '2023-09-12 16:19:49.771 +00:00',
+      '8': '2023-09-12 16:19:49.771 +00:00'
+    }
+  },
+  sql: 'INSERT INTO [dues] ([branch],[who],[duedate],[description],[status],[user],[datenumber],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[branch],INSERTED.[who],INSERTED.[duedate],INSERTED.[description],INSERTED.[status],INSERTED.[user],INSERTED.[datenumber],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8);',
+  parameters: {
+    '0': 'Manage Engine',
+    '1': 'Global Gate',
+    '2': '2023-09-30 00:00:00.000 +00:00',
+    '3': 'Renovación Licencias Service Desk Ingeniería',
+    '4': 1,
+    '5': 'segural',
+    '6': 1696032000000,
+    '7': '2023-09-12 16:19:49.771 +00:00',
+    '8': '2023-09-12 16:19:49.771 +00:00'
+  }
+}
+
+Node.js v18.15.0
