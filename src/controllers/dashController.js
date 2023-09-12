@@ -18,7 +18,16 @@ const dashController = {
       limit: 5,
       order: [['id','DESC']]
     })
-    res.render("./dashboard/home.ejs", {req, stockin, stockout});
+    let inventories = await db.inventory.findAll({
+      where:{status: 1},
+      limit: 5,
+      order: [['id','DESC']]
+    })
+    let dues = await db.due.findAll({
+      limit: 5,
+      order: [['datenumber','ASC']]
+    })
+    res.render("./dashboard/home.ejs", {req, stockin, stockout, inventories, dues});
 },
 };
 
