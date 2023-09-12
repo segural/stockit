@@ -32,6 +32,8 @@ const rolesRoutes = require("./src/routes/roles.js");
 const permissionsRoutes = require("./src/routes/permissions.js");
 const productsRoutes = require("./src/routes/products.js");
 const stockRoutes = require("./src/routes/stock.js");
+const inventoryRoutes = require("./src/routes/inventory.js");
+const eosRoutes = require("./src/routes/eos.js");
 
 //Indico para cada petición, el archivo de rutas que lo manejará:
 app.use("/", mainRoutes);
@@ -41,6 +43,8 @@ app.use("/roles", rolesRoutes);
 app.use("/permissions", permissionsRoutes);
 app.use("/products", productsRoutes);
 app.use("/stock", stockRoutes);
+app.use("/inventory", inventoryRoutes);
+app.use("/eos", eosRoutes);
 
 //Inicio servidor en puerto 8000
 app.listen(process.env.PORT || 8000, function () {

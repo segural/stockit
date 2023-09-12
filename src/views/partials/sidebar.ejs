@@ -33,8 +33,10 @@
             </a>
             <ul class="treeview-menu">
                <li class="<%= req.originalUrl === '/inventory/desktop' ? 'active' : '' %>" ><a  href="/inventory/desktop">Desktops</a></li>       
-               <li class="<%= req.originalUrl === '/inventory/laptop' ? 'active' : '' %>" ><a  href="/inventory/laptop">Notebooks</a></li>       
+               <li class="<%= req.originalUrl === '/inventory/notebook' ? 'active' : '' %>" ><a  href="/inventory/notebook">Notebooks</a></li>       
                <li class="<%= req.originalUrl === '/inventory/server' ? 'active' : '' %>" ><a  href="/inventory/server">Servidores</a></li>       
+               <li class="<%= req.originalUrl === '/inventory/cellphone' ? 'active' : '' %>" ><a  href="/inventory/cellphone">Celulares</a></li>       
+               <li class="<%= req.originalUrl === '/inventory/due' ? 'active' : '' %>" ><a  href="/inventory/due">Vencimientos</a></li>       
             </ul>
          </li>
          <% } %>
@@ -68,6 +70,19 @@
                         <li class="<%= req.originalUrl.includes('/permissions') ? 'active' : '' %>"><a  href="/permissions/list">Permisos</a></i></li>
                      <% } %>                    
                   </ul>
+            </li>
+         <% } %>
+         <% if (req.session.userCan.includes("EOS")) {%>
+            <li class="treeview">
+               <a href="javascript:;" class="<%= req.originalUrl.includes('/eos')? 'active' : '' %>">
+                  <i class="fa fa-ban" style="color: white;"></i>
+                  <span>End of Service</span>
+                  <span class="pull-right-container"><i class="fa fa-angle-left float-right"></i></span>
+               </a>
+               <ul class="treeview-menu">
+                  <li class="<%= req.originalUrl === '/eos/hardware' ? 'active' : '' %>" ><a  href="/eos/hardware">Hardware</a></li>       
+                  <li class="<%= req.originalUrl === '/eos/cellphone' ? 'active' : '' %>" ><a  href="/eos/cellphone">Celulares</a></li>             
+               </ul>
             </li>
          <% } %>
       </ul>

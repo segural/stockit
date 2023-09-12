@@ -98,8 +98,11 @@ const stockController = {
             notes: req.body.sector,
             user: req.session.userLogged.user,
         })
-        res.redirect('/stock/list');
-    },
+        if (req.body.inventory == "si") {
+            res.redirect('/inventory/addcomputer')
+        } else if (req.body.inventory == "no") {
+            res.redirect('/stock/list');
+    }},
 
     ocadd: async (req, res) => {
         let oc = await db.ocs.create({
