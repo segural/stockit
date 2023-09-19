@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   cellphone.init({
-    phonenumber: DataTypes.INTEGER,
+    phonenumber: DataTypes.BIGINT,
     brand: DataTypes.STRING,
     model: DataTypes.STRING,
     sector: DataTypes.STRING,

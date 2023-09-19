@@ -136,7 +136,10 @@
                         <tbody>
                           <% for (due of dues) {%>
                           <tr class="info1">
-                            <td><%= Intl.DateTimeFormat('en-GB').format(new Date(due.duedate)) %></td>
+                            <td>
+                              <%  let duedate = new Date(due.duedate);duedate = new Date(duedate.getFullYear(),duedate.getMonth(),duedate.getDate() + 2) %> 
+                              <%= Intl.DateTimeFormat('en-GB').format(new Date(duedate)) %>
+                            </td>
                             <td><%= due.branch %></td>
                             <td><%= due.who %></td>
                             <td><%= due.description %></td>

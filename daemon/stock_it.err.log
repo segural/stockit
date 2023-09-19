@@ -507,3 +507,157 @@ Error
 }
 
 Node.js v18.15.0
+RangeError: C:\Webserver\stockit\src\views\dashboard\home.ejs:139
+    137|                           <% for (due of dues) {%>
+    138|                           <tr class="info1">
+ >> 139|                             <td><%= Intl.DateTimeFormat('en-GB').format(new Date(due.duedate) +2) %></td>
+    140|                             <td><%= due.branch %></td>
+    141|                             <td><%= due.who %></td>
+    142|                             <td><%= due.description %></td>
+
+Invalid time value
+    at eval ("C:\\Webserver\\stockit\\src\\views\\dashboard\\home.ejs":48:55)
+    at home (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+    at ServerResponse.render (C:\Webserver\stockit\node_modules\express\lib\response.js:1039:7)
+    at index (C:\Webserver\stockit\src\controllers\dashController.js:30:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+RangeError: C:\Webserver\stockit\src\views\dashboard\home.ejs:139
+    137|                           <% for (due of dues) {%>
+    138|                           <tr class="info1">
+ >> 139|                             <td><%= Intl.DateTimeFormat('en-GB').format(new Date(due.duedate +2)) %></td>
+    140|                             <td><%= due.branch %></td>
+    141|                             <td><%= due.who %></td>
+    142|                             <td><%= due.description %></td>
+
+Invalid time value
+    at eval ("C:\\Webserver\\stockit\\src\\views\\dashboard\\home.ejs":48:55)
+    at home (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+    at ServerResponse.render (C:\Webserver\stockit\node_modules\express\lib\response.js:1039:7)
+    at index (C:\Webserver\stockit\src\controllers\dashController.js:30:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error
+    at Query.run (C:\Webserver\stockit\node_modules\sequelize\lib\dialects\mssql\query.js:107:25)
+    at C:\Webserver\stockit\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MSSqlQueryInterface.insert (C:\Webserver\stockit\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async cellphone.save (C:\Webserver\stockit\node_modules\sequelize\lib\model.js:2490:35)
+    at async cellphone.create (C:\Webserver\stockit\node_modules\sequelize\lib\model.js:1362:12)
+    at async celladd (C:\Webserver\stockit\src\controllers\invController.js:140:9) {
+  name: 'SequelizeDatabaseError',
+  parent: RequestError: The conversion of the nvarchar value '2615466479' overflowed an int column.
+      at RequestTokenHandler.onErrorMessage (C:\Webserver\stockit\node_modules\tedious\lib\token\handler.js:294:21)
+      at Readable.<anonymous> (C:\Webserver\stockit\node_modules\tedious\lib\token\token-stream-parser.js:21:33)
+      at Readable.emit (node:events:513:28)
+      at addChunk (node:internal/streams/readable:324:12)
+      at readableAddChunk (node:internal/streams/readable:297:9)
+      at Readable.push (node:internal/streams/readable:234:10)
+      at next (node:internal/streams/from:98:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    code: 'EREQUEST',
+    number: 248,
+    state: 1,
+    class: 16,
+    serverName: 'ARSQLEXP\\SQLEXPRESS',
+    procName: '',
+    lineNumber: 1,
+    sql: 'INSERT INTO [cellphones] ([phonenumber],[brand],[model],[sector],[imei],[user],[deliverydate],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[phonenumber],INSERTED.[brand],INSERTED.[model],INSERTED.[sector],INSERTED.[imei],INSERTED.[user],INSERTED.[deliverydate],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9);',
+    parameters: {
+      '0': '2615466479',
+      '1': 'samsung',
+      '2': 'Galaxy 04 128g',
+      '3': 'Maria Cecilia Coll/Directora Medica de Centro',
+      '4': '352410486869642',
+      '5': 'yuffreg',
+      '6': '2023-08-04 00:00:00.000 +00:00',
+      '7': 1,
+      '8': '2023-09-14 12:02:43.215 +00:00',
+      '9': '2023-09-14 12:02:43.215 +00:00'
+    }
+  },
+  original: RequestError: The conversion of the nvarchar value '2615466479' overflowed an int column.
+      at RequestTokenHandler.onErrorMessage (C:\Webserver\stockit\node_modules\tedious\lib\token\handler.js:294:21)
+      at Readable.<anonymous> (C:\Webserver\stockit\node_modules\tedious\lib\token\token-stream-parser.js:21:33)
+      at Readable.emit (node:events:513:28)
+      at addChunk (node:internal/streams/readable:324:12)
+      at readableAddChunk (node:internal/streams/readable:297:9)
+      at Readable.push (node:internal/streams/readable:234:10)
+      at next (node:internal/streams/from:98:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    code: 'EREQUEST',
+    number: 248,
+    state: 1,
+    class: 16,
+    serverName: 'ARSQLEXP\\SQLEXPRESS',
+    procName: '',
+    lineNumber: 1,
+    sql: 'INSERT INTO [cellphones] ([phonenumber],[brand],[model],[sector],[imei],[user],[deliverydate],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[phonenumber],INSERTED.[brand],INSERTED.[model],INSERTED.[sector],INSERTED.[imei],INSERTED.[user],INSERTED.[deliverydate],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9);',
+    parameters: {
+      '0': '2615466479',
+      '1': 'samsung',
+      '2': 'Galaxy 04 128g',
+      '3': 'Maria Cecilia Coll/Directora Medica de Centro',
+      '4': '352410486869642',
+      '5': 'yuffreg',
+      '6': '2023-08-04 00:00:00.000 +00:00',
+      '7': 1,
+      '8': '2023-09-14 12:02:43.215 +00:00',
+      '9': '2023-09-14 12:02:43.215 +00:00'
+    }
+  },
+  sql: 'INSERT INTO [cellphones] ([phonenumber],[brand],[model],[sector],[imei],[user],[deliverydate],[status],[createdAt],[updatedAt]) OUTPUT INSERTED.[id],INSERTED.[phonenumber],INSERTED.[brand],INSERTED.[model],INSERTED.[sector],INSERTED.[imei],INSERTED.[user],INSERTED.[deliverydate],INSERTED.[status],INSERTED.[createdAt],INSERTED.[updatedAt] VALUES (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9);',
+  parameters: {
+    '0': '2615466479',
+    '1': 'samsung',
+    '2': 'Galaxy 04 128g',
+    '3': 'Maria Cecilia Coll/Directora Medica de Centro',
+    '4': '352410486869642',
+    '5': 'yuffreg',
+    '6': '2023-08-04 00:00:00.000 +00:00',
+    '7': 1,
+    '8': '2023-09-14 12:02:43.215 +00:00',
+    '9': '2023-09-14 12:02:43.215 +00:00'
+  }
+}
+
+Node.js v18.15.0
+TypeError: C:\Webserver\stockit\src\views\inventory\cellList.ejs:50
+    48|     <div class="wrapper">
+    49|       <!-- Include Header -->
+ >> 50|       <%- include('../partials/header.ejs') %>
+    51|       <!--header end-->
+    52| 
+    53|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\inventory\\cellList.ejs":12:17)
+    at cellList (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
