@@ -110,8 +110,10 @@
                             <% if (item.datenumber - number > "2629746000") {%>
                               <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
                             <% } else if (item.datenumber - number <= "2629746000" && item.datenumber - number > "604800000") {%>
+                              <button class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></button>
+                            <% } else if (item.datenumber - number <= "604800000" && item.datenumber - number > "0") {%>
                               <button class="btn btn-warning btn-sm"><i class="fa fa-exclamation-triangle"></i></button>
-                            <% } else if (item.datenumber - number <= "604800000") {%>
+                            <% } else if (item.datenumber - number <= "0") {%>
                               <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
                             <% } %>
                           </td>
