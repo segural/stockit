@@ -34,6 +34,8 @@ const productsRoutes = require("./src/routes/products.js");
 const stockRoutes = require("./src/routes/stock.js");
 const inventoryRoutes = require("./src/routes/inventory.js");
 const eosRoutes = require("./src/routes/eos.js");
+const cron = require('node-cron');
+const AutoMails = require("./src/controllers/AutoMails");
 
 //Indico para cada petición, el archivo de rutas que lo manejará:
 app.use("/", mainRoutes);
@@ -46,7 +48,13 @@ app.use("/stock", stockRoutes);
 app.use("/inventory", inventoryRoutes);
 app.use("/eos", eosRoutes);
 
+//Scheduled Job
+cron.schedule("0 0 8 * Monday,Thursday", function() {
+  AutoMails();
+},{timezone: "America/Argentina/Buenos_Aires"}
+);
+
 //Inicio servidor en puerto 3000
-app.listen(process.env.PORT || 3000, function () {
-  console.log(`Servidor corriendo en puerto ${process.env.PORT || 3000}`);
+app.listen(process.env.PORT || 8000, function () {
+  console.log(`Servidor corriendo en puerto ${process.env.PORT || 8000}`);
 });

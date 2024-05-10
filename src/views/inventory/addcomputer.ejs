@@ -104,10 +104,17 @@
                             <input type="text" class="form-control" name="serialnumber" required>
                          </div>
                          <div class="form-group">
-                            <label>Tipo de equipo</label><br>
-                            <label class="radio-inline"> <input name="type" value="desktop" type="radio" checked="checked"> Desktop</label> 
-                            <label class="radio-inline"> <input name="type" value="notebook" type="radio"> Notebook</label>
-                         </div>
+                           <label>Tipo de equipo</label><br>
+                           <label class="radio-inline"> <input name="type" value="desktop" type="radio" checked="checked"> Desktop</label> 
+                           <label class="radio-inline"> <input name="type" value="notebook" type="radio"> Notebook</label>
+                          </div>
+                          <br>
+                          <div class="form-group">
+                           <label>Dar de baja equipo del stock</label><br>
+                           <label class="radio-inline"> <input name="inventory" id="inventory" value="no" type="radio" checked="checked"> NO</label> 
+                           <label class="radio-inline"> <input name="inventory" id="inventory" value="si" type="radio"> SI</label>
+                          </div>
+                          <br>
                          <div class="reset-button">
                             <button onclick="history.back()" class="btn btn-warning"> Volver</button>
                             <button type="submit" class="btn btn-success"> Enviar</button>

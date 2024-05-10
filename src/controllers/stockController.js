@@ -7,7 +7,7 @@ const { QueryTypes } = require("sequelize");
 const stockController = {
 // Stock
     stocklist: async (req, res) => {
-        let stocks = await db.sequelize.query("SELECT c.name as 'category',SUM(s.quantity) as 'quantity' FROM stockit.stocks s INNER JOIN stockit.products p on s.idProduct = p.id INNER JOIN stockit.categories c on p.idCategory = c.id GROUP BY c.name", {
+        let stocks = await db.sequelize.query("SELECT c.name as 'category',SUM(s.quantity) as 'quantity' FROM stocks s INNER JOIN products p on s.idProduct = p.id INNER JOIN categories c on p.idCategory = c.id GROUP BY c.name", {
             type: QueryTypes.SELECT
         });
         res.render("./stock/stockList.ejs" , {req, stocks});
