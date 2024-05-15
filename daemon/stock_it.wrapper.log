@@ -206,3 +206,32 @@
 2024-05-10 15:02:01 - Finished stock_it.exe
 2024-05-10 15:03:02 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2024-05-10 15:03:02 - Started 12764
+2024-05-10 15:13:06 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-10 15:13:06 - Started 12736
+2024-05-10 15:13:10 - Stopping stock_it.exe
+2024-05-10 15:13:10 - ProcessKill 12736
+2024-05-10 15:13:10 - Found child process: 5672 Name: conhost.exe
+2024-05-10 15:13:10 - Found child process: 14288 Name: cmd.exe
+2024-05-10 15:13:11 - Stopping process 5672
+2024-05-10 15:13:11 - Send SIGINT 5672
+2024-05-10 15:13:11 - SIGINT to 5672 failed - Killing as fallback
+2024-05-10 15:13:11 - Stopping process 14288
+2024-05-10 15:13:11 - Process 14288 is already stopped
+2024-05-10 15:13:11 - Stopping process 12736
+2024-05-10 15:13:11 - Send SIGINT 12736
+2024-05-10 15:13:11 - SIGINT to 12736 failed - Killing as fallback
+2024-05-10 15:13:11 - Finished stock_it.exe
+2024-05-10 15:13:11 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-10 15:13:11 - Started 10936
+2024-05-10 15:14:26 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-10 15:14:26 - Started 3184
+2024-05-10 15:18:47 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-10 15:18:47 - Started 4428
+2024-05-10 15:20:31 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-10 15:20:31 - Started 4380
+2024-05-10 15:20:39 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-10 15:20:39 - Started 5560
+2024-05-10 15:21:10 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-10 15:21:10 - Started 5544
+2024-05-15 15:02:47 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-15 15:02:47 - Started 10384

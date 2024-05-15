@@ -118,8 +118,15 @@ const invController = {
             user: req.session.userLogged.user,
             status: 1,
         })
-        res.redirect("/inventory/"+cputoadd.type)
-    },
+        if (req.body.inventory == "si") {
+            if (req.body.type == "desktop") {
+                res.redirect('/stock/detail/PC')
+            } else {
+                res.redirect('/stock/detail/Notebook')
+            }
+        } else if (req.body.inventory == "no") {
+            res.redirect("/inventory/"+cputoadd.type)
+    }},
 
     storeserver: async (req,res) => {
         await db.inventory.create({
