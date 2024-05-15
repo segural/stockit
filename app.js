@@ -36,6 +36,9 @@ const inventoryRoutes = require("./src/routes/inventory.js");
 const eosRoutes = require("./src/routes/eos.js");
 const cron = require('node-cron');
 const AutoMails = require("./src/controllers/AutoMails");
+const DueAutoMails = require("./src/controllers/DueAutoMails");
+const DueAutoMailsAlert = require("./src/controllers/DueAutoMailsAlert");
+const DueAutoMailsWarning = require("./src/controllers/DueAutoMailsWarning");
 
 //Indico para cada petición, el archivo de rutas que lo manejará:
 app.use("/", mainRoutes);
@@ -49,8 +52,20 @@ app.use("/inventory", inventoryRoutes);
 app.use("/eos", eosRoutes);
 
 //Scheduled Job
-cron.schedule("0 0 8 * Monday,Thursday", function() {
+cron.schedule("0 0 8 * * 1,4", function() {
   AutoMails();
+},{timezone: "America/Argentina/Buenos_Aires"}
+);
+cron.schedule("0 0 8 * * 2,5", function() {
+  DueAutoMails();
+},{timezone: "America/Argentina/Buenos_Aires"}
+);
+cron.schedule("0 0 8 * * 2,5", function() {
+  DueAutoMailsAlert();
+},{timezone: "America/Argentina/Buenos_Aires"}
+);
+cron.schedule("0 0 8 * * 2,5", function() {
+  DueAutoMailsWarning();
 },{timezone: "America/Argentina/Buenos_Aires"}
 );
 
