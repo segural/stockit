@@ -56,11 +56,11 @@ cron.schedule("0 0 8 * * 1,4", function() {
   AutoMails();
 },{timezone: "America/Argentina/Buenos_Aires"}
 );
-cron.schedule("0 0 8 * * 2,5", function() {
+cron.schedule("0 50 7 * * 2,5", function() {
   DueAutoMails();
 },{timezone: "America/Argentina/Buenos_Aires"}
 );
-cron.schedule("0 0 8 * * 2,5", function() {
+cron.schedule("0 55 7 * * 2,5", function() {
   DueAutoMailsAlert();
 },{timezone: "America/Argentina/Buenos_Aires"}
 );
