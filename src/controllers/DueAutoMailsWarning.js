@@ -6,7 +6,7 @@ require("datejs");
 const ejs = require("ejs");
 const axios = require('axios');
 
-const AutoMails = async function () {
+const DueAutoMailsWarning = async function () {
     const fechaActual = new Date();
     let number = fechaActual.getTime();
     let items = await db.due.findAll({
@@ -33,7 +33,7 @@ const AutoMails = async function () {
             "cc": [],
             "cco": [],
             "asunto": "Vencimientos de licencias - WARNING",
-            "contenido": "<h1>Sistema Stock IT</h1>" + "<h2>Hay vencimientos en menos de 1 semana que debe verificar: </h2> <br>" + objetoATablaHTML(stocks),
+            "contenido": "<h1>Sistema Stock IT</h1>" + "<h2>Hay vencimientos en menos de 1 semana que debe verificar: </h2> <br>" + objetoATablaHTML(items),
             "isBodyHtml": true,
     };
     
@@ -51,4 +51,4 @@ const AutoMails = async function () {
 
     }
 
-module.exports = AutoMails;
+module.exports = DueAutoMailsWarning;
