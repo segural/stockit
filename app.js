@@ -60,7 +60,7 @@ cron.schedule("0 50 7 * * 2,5", function() {
   DueAutoMails();
 },{timezone: "America/Argentina/Buenos_Aires"}
 );
-cron.schedule("0 55 7 * * 2,5", function() {
+cron.schedule("0 05 16 * * 2,5", function() {
   DueAutoMailsAlert();
 },{timezone: "America/Argentina/Buenos_Aires"}
 );
