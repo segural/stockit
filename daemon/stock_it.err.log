@@ -1188,3 +1188,744 @@ Error: Cannot find module 'C:\Webserver\stockit\node_modules\node-windows\lib\wr
 }
 
 Node.js v18.15.0
+C:\Webserver\stockit\src\controllers\DueAutoMailsAlert.js:36
+            "contenido": "<h1>Sistema Stock IT</h1>" + "<h2>Hay licencias vencidas que debe verificar: </h2> <br>" + objetoATablaHTML(stocks),
+                                                                                                                                      ^
+
+ReferenceError: stocks is not defined
+    at AutoMails (C:\Webserver\stockit\src\controllers\DueAutoMailsAlert.js:36:135)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Webserver\stockit\src\controllers\DueAutoMailsWarning.js:36
+            "contenido": "<h1>Sistema Stock IT</h1>" + "<h2>Hay vencimientos en menos de 1 semana que debe verificar: </h2> <br>" + objetoATablaHTML(stocks),
+                                                                                                                                                     ^
+
+ReferenceError: stocks is not defined
+    at AutoMails (C:\Webserver\stockit\src\controllers\DueAutoMailsWarning.js:36:150)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+Error al enviar POST: AxiosError: Request failed with status code 404
+    at settle (C:\Webserver\stockit\node_modules\axios\dist\node\axios.cjs:1966:12)
+    at IncomingMessage.handleStreamEnd (C:\Webserver\stockit\node_modules\axios\dist\node\axios.cjs:3065:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at endReadableNT (node:internal/streams/readable:1359:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\Webserver\stockit\node_modules\axios\dist\node\axios.cjs:3876:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'ERR_BAD_REQUEST',
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      'User-Agent': 'axios/1.6.8',
+      'Content-Length': '475',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'post',
+    url: 'http://arweb01.crtp.corp:36245/Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797',
+    data: `{"para":["notificaciones_it@rtp.com.ar"],"cc":[],"cco":[],"asunto":"Licencias vencidas - ALERTA","contenido":"<h1>Sistema Stock IT</h1><h2>Hay licencias vencidas que debe verificar: </h2> <br><table border='1'><tr><th>Descripción</th><th>Quien renueva</th><th>Fecha de vencimiento</th></tr><tr><td>Licencias FortiMail USA</td><td>TMB Group</td><td>2024-05-10</td></tr><tr><td>Licencias FortiGate USA</td><td>TMB Group</td><td>2023-03-01</td></tr></table>","isBodyHtml":true}`
+  },
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      connect: [Function (anonymous)],
+      error: [Function (anonymous)],
+      socket: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      finish: [Function: requestOnFinish]
+    },
+    _eventsCount: 7,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: false,
+    _last: true,
+    chunkedEncoding: false,
+    shouldKeepAlive: false,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: '475',
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: false,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'arweb01.crtp.corp',
+      _closeAfterHandlingError: false,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [Circular *1],
+      [Symbol(async_id_symbol)]: 6971,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 60,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0
+    },
+    _header: 'POST /Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797 HTTP/1.1\r\n' +
+      'Accept: application/json, text/plain, */*\r\n' +
+      'Content-Type: application/json\r\n' +
+      'User-Agent: axios/1.6.8\r\n' +
+      'Content-Length: 475\r\n' +
+      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+      'Host: arweb01.crtp.corp:36245\r\n' +
+      'Connection: close\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 80,
+      protocol: 'http:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype],
+      freeSockets: [Object: null prototype] {},
+      keepAliveMsecs: 1000,
+      keepAlive: false,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 1,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'POST',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    joinDuplicateHeaders: undefined,
+    path: '/Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797',
+    _ended: true,
+    res: IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 404,
+      statusMessage: 'Not Found',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *1],
+      responseUrl: 'http://arweb01.crtp.corp:36245/Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797',
+      redirects: [],
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 10,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: 'arweb01.crtp.corp',
+    protocol: 'http:',
+    _redirectable: Writable {
+      _writableState: [WritableState],
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      _options: [Object],
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 475,
+      _requestBodyBuffers: [],
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'http://arweb01.crtp.corp:36245/Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797',
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kEndCalled)]: true,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      'content-type': [Array],
+      'user-agent': [Array],
+      'content-length': [Array],
+      'accept-encoding': [Array],
+      host: [Array]
+    },
+    [Symbol(errored)]: null,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  response: {
+    status: 404,
+    statusText: 'Not Found',
+    headers: Object [AxiosHeaders] {
+      'transfer-encoding': 'chunked',
+      server: 'Microsoft-IIS/10.0',
+      'x-powered-by': 'ASP.NET',
+      date: 'Tue, 23 Jul 2024 18:48:00 GMT',
+      connection: 'close'
+    },
+    config: {
+      transitional: [Object],
+      adapter: [Array],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      env: [Object],
+      validateStatus: [Function: validateStatus],
+      headers: [Object [AxiosHeaders]],
+      method: 'post',
+      url: 'http://arweb01.crtp.corp:36245/Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797',
+      data: `{"para":["notificaciones_it@rtp.com.ar"],"cc":[],"cco":[],"asunto":"Licencias vencidas - ALERTA","contenido":"<h1>Sistema Stock IT</h1><h2>Hay licencias vencidas que debe verificar: </h2> <br><table border='1'><tr><th>Descripción</th><th>Quien renueva</th><th>Fecha de vencimiento</th></tr><tr><td>Licencias FortiMail USA</td><td>TMB Group</td><td>2024-05-10</td></tr><tr><td>Licencias FortiGate USA</td><td>TMB Group</td><td>2023-03-01</td></tr></table>","isBodyHtml":true}`
+    },
+    request: <ref *1> ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '475',
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'POST /Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797 HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: axios/1.6.8\r\n' +
+        'Content-Length: 475\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: arweb01.crtp.corp:36245\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'arweb01.crtp.corp',
+      protocol: 'http:',
+      _redirectable: [Writable],
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kEndCalled)]: true,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    data: ''
+  }
+}
+C:\Webserver\stockit\src\controllers\invController.js:118
+            user: req.session.userLogged.user,
+                                         ^
+
+TypeError: Cannot read properties of undefined (reading 'user')
+    at storecomputer (C:\Webserver\stockit\src\controllers\invController.js:118:42)
+    at Layer.handle [as handle_request] (C:\Webserver\stockit\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Webserver\stockit\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Webserver\stockit\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Webserver\stockit\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Webserver\stockit\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Webserver\stockit\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Webserver\stockit\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Webserver\stockit\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Webserver\stockit\node_modules\express\lib\router\index.js:47:12)
+
+Node.js v18.15.0
+C:\Webserver\stockit\src\controllers\invController.js:118
+            user: req.session.userLogged.user,
+                                         ^
+
+TypeError: Cannot read properties of undefined (reading 'user')
+    at storecomputer (C:\Webserver\stockit\src\controllers\invController.js:118:42)
+    at Layer.handle [as handle_request] (C:\Webserver\stockit\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Webserver\stockit\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Webserver\stockit\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Webserver\stockit\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Webserver\stockit\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Webserver\stockit\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Webserver\stockit\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Webserver\stockit\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Webserver\stockit\node_modules\express\lib\router\index.js:47:12)
+
+Node.js v18.15.0
+C:\Webserver\stockit\src\controllers\invController.js:118
+            user: req.session.userLogged.user,
+                                         ^
+
+TypeError: Cannot read properties of undefined (reading 'user')
+    at storecomputer (C:\Webserver\stockit\src\controllers\invController.js:118:42)
+    at Layer.handle [as handle_request] (C:\Webserver\stockit\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Webserver\stockit\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Webserver\stockit\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Webserver\stockit\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Webserver\stockit\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Webserver\stockit\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Webserver\stockit\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Webserver\stockit\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Webserver\stockit\node_modules\express\lib\router\index.js:47:12)
+
+Node.js v18.15.0
+TypeError: C:\Webserver\stockit\src\views\inventory\addcomputer.ejs:50
+    48|     <div class="wrapper">
+    49|       <!-- Include Header -->
+ >> 50|       <%- include('../partials/header.ejs') %>
+    51|       <!--header end-->
+    52| 
+    53|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\inventory\\addcomputer.ejs":12:17)
+    at addcomputer (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+TypeError: C:\Webserver\stockit\src\views\dashboard\home.ejs:53
+    51|     <div class="wrapper">
+    52|       <!-- Include Header -->
+ >> 53|       <%- include('../partials/header.ejs') %>
+    54|       <!--header end-->
+    55| 
+    56|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\dashboard\\home.ejs":12:17)
+    at home (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+TypeError: C:\Webserver\stockit\src\views\dashboard\home.ejs:53
+    51|     <div class="wrapper">
+    52|       <!-- Include Header -->
+ >> 53|       <%- include('../partials/header.ejs') %>
+    54|       <!--header end-->
+    55| 
+    56|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\dashboard\\home.ejs":12:17)
+    at home (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at Server.listen (node:net:1876:7)
+    at Function.listen (C:\Webserver\stockit\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Webserver\stockit\app.js:73:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8000
+}
+
+Node.js v18.15.0

@@ -17,7 +17,7 @@ const stockController = {
         let stockin = await db.movements.findAll({
             where:{type: 1},
             include:[{association:"product"}],
-            order: [['id','DESC']]
+            order: [['createdAt','ASC']]
           })
         res.render("./stock/inboundstock.ejs", {req, stockin});
     },
@@ -26,7 +26,7 @@ const stockController = {
         let stockout = await db.movements.findAll({
             where:{type: 0},
             include:[{association:"product"},{association:"oc"}],
-            order: [['id','DESC']]
+            order: [['createdAt','ASC']]
           })
         res.render("./stock/outboundStock.ejs", {req, stockout});
     },

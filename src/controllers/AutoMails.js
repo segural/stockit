@@ -31,11 +31,11 @@ const AutoMails = async function () {
             "cco": [],
             "asunto": "Stock cantidades",
             "contenido": "<h1>Sistema Stock IT</h1>" + "<h2>Hay items que debe verificar, queda poca cantidad: </h2> <br>" + objetoATablaHTML(stocks),
-            "isBodyHtml": true,
+            "isHtml": true,
     };
     
     // URL de la API a la que deseas enviar el POST
-    const apiUrl = 'http://arweb01.crtp.corp:36245/Email?appId=9D3CFF08-4061-494B-B445-6061DBF6699B';
+    const apiUrl = 'http://arweb01.crtp.corp:36245/api/Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797';
     
     // Realizar la solicitud POST utilizando Axios
     axios.post(apiUrl, postData)

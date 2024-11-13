@@ -84,6 +84,7 @@
                     <table id="userList" class="table table-bordered table-striped table-hover">
                       <thead class="back_table_color">
                         <tr class="info">
+                          <th class="dt-center" hidden>Fecha</th>
                           <th class="dt-center">Fecha</th>
                           <th>Producto</th>
                           <th>Cantidad</th>
@@ -94,6 +95,10 @@
                       <tbody>
                         <% for (stock of stockin) {%>
                         <tr class="info1">
+                          <td class="dt-center" hidden>
+                            <%  let FechaOculta = new Date(stock.createdAt);FechaOculta = new Date(FechaOculta.getFullYear(),FechaOculta.getMonth(),FechaOculta.getDate()) %> 
+                            <%= FechaOculta.toISOString() %>
+                          </td>
                           <td class="dt-center"><%= Intl.DateTimeFormat('es-AR').format(new Date(stock.createdAt)) %></td>
                           <td><%= stock.product.description %></td>
                           <td><%= stock.quantity %></td>
@@ -173,6 +178,9 @@
           language: {
             url: "/assets/plugins/datatables/language/es-AR.json",
           },
+          order: [
+            [0, 'desc']
+          ],
         });
       });
     </script>
