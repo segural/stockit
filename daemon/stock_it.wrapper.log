@@ -493,3 +493,27 @@
 2024-11-12 13:55:11 - Finished stock_it.exe
 2024-11-12 13:55:11 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2024-11-12 13:55:11 - Started 6888
+2024-11-13 09:40:17 - Stopping stock_it.exe
+2024-11-13 09:40:17 - ProcessKill 6888
+2024-11-13 09:40:18 - Found child process: 11248 Name: conhost.exe
+2024-11-13 09:40:18 - Found child process: 9508 Name: node.exe
+2024-11-13 09:40:18 - Stopping process 11248
+2024-11-13 09:40:18 - Send SIGINT 11248
+2024-11-13 09:40:18 - SIGINT to 11248 failed - Killing as fallback
+2024-11-13 09:40:18 - Stopping process 9508
+2024-11-13 09:40:18 - Send SIGINT 9508
+2024-11-13 09:40:18 - SIGINT to 9508 failed - Killing as fallback
+2024-11-13 09:40:18 - Stopping process 6888
+2024-11-13 09:40:18 - Send SIGINT 6888
+2024-11-13 09:40:18 - SIGINT to 6888 failed - Killing as fallback
+2024-11-13 09:40:18 - Finished stock_it.exe
+2024-11-13 09:40:20 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-11-13 09:40:20 - Started 13752
+2024-12-11 11:58:33 - Stopping stock_it.exe
+2024-12-11 11:58:33 - Finished stock_it.exe
+2024-12-11 11:59:37 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-12-11 11:59:37 - Started 4832
+2025-04-16 11:58:49 - Stopping stock_it.exe
+2025-04-16 11:58:49 - Finished stock_it.exe
+2025-04-16 11:59:47 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 C:\Webserver\stockit\node_modules\node-windows\lib\wrapper.js --file C:\Webserver\stockit\app.js --scriptoptions= --log "STOCK_IT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-04-16 11:59:47 - Started 4532

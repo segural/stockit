@@ -1929,3 +1929,174 @@ Emitted 'error' event on Server instance at:
 }
 
 Node.js v18.15.0
+C:\Webserver\stockit\src\controllers\stockController.js:87
+        let stockQuantity = Number(stock.quantity) - Number(req.body.quantity);
+                                         ^
+
+TypeError: Cannot read properties of null (reading 'quantity')
+    at stockdeduct (C:\Webserver\stockit\src\controllers\stockController.js:87:42)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+TypeError: C:\Webserver\stockit\src\views\inventory\computersList.ejs:50
+    48|     <div class="wrapper">
+    49|       <!-- Include Header -->
+ >> 50|       <%- include('../partials/header.ejs') %>
+    51|       <!--header end-->
+    52| 
+    53|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\inventory\\computersList.ejs":12:17)
+    at computersList (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+TypeError: C:\Webserver\stockit\src\views\inventory\computersList.ejs:50
+    48|     <div class="wrapper">
+    49|       <!-- Include Header -->
+ >> 50|       <%- include('../partials/header.ejs') %>
+    51|       <!--header end-->
+    52| 
+    53|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\inventory\\computersList.ejs":12:17)
+    at computersList (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+TypeError: C:\Webserver\stockit\src\views\inventory\computersList.ejs:50
+    48|     <div class="wrapper">
+    49|       <!-- Include Header -->
+ >> 50|       <%- include('../partials/header.ejs') %>
+    51|       <!--header end-->
+    52| 
+    53|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\inventory\\computersList.ejs":12:17)
+    at computersList (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+TypeError: C:\Webserver\stockit\src\views\inventory\computersList.ejs:50
+    48|     <div class="wrapper">
+    49|       <!-- Include Header -->
+ >> 50|       <%- include('../partials/header.ejs') %>
+    51|       <!--header end-->
+    52| 
+    53|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\inventory\\computersList.ejs":12:17)
+    at computersList (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+TypeError: C:\Webserver\stockit\src\views\inventory\computersList.ejs:50
+    48|     <div class="wrapper">
+    49|       <!-- Include Header -->
+ >> 50|       <%- include('../partials/header.ejs') %>
+    51|       <!--header end-->
+    52| 
+    53|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\inventory\\computersList.ejs":12:17)
+    at computersList (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
+TypeError: C:\Webserver\stockit\src\views\inventory\computersList.ejs:50
+    48|     <div class="wrapper">
+    49|       <!-- Include Header -->
+ >> 50|       <%- include('../partials/header.ejs') %>
+    51|       <!--header end-->
+    52| 
+    53|       <!--Include Sidebar-->
+
+C:\Webserver\stockit\src\views\partials\header.ejs:23
+    21|           <li class="nav-item dropdown dropdown-user">
+    22|             <a class="nav-link" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ >> 23|                 <img src="/img/users/<%= locals.userLogged.image %>" class="rounded-circle" width="50" height="50" alt="user"></a>           
+    24|             <div class="dropdown-menu drop_down" >
+    25|                  <div class="menus">
+    26|                     <a class="dropdown-item" href="#"><i class="fa fa-user"></i> User Profile</a>
+
+Cannot read properties of null (reading 'image')
+    at eval ("C:\\Webserver\\stockit\\src\\views\\partials\\header.ejs":12:44)
+    at header (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at include (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:701:39)
+    at eval ("C:\\Webserver\\stockit\\src\\views\\inventory\\computersList.ejs":12:17)
+    at computersList (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:703:17)
+    at tryHandleCache (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:274:36)
+    at exports.renderFile [as engine] (C:\Webserver\stockit\node_modules\ejs\lib\ejs.js:491:10)
+    at View.render (C:\Webserver\stockit\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Webserver\stockit\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Webserver\stockit\node_modules\express\lib\application.js:609:3)
