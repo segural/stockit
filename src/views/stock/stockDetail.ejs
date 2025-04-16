@@ -183,7 +183,10 @@
                   <label class="control-label">Producto</label>
                   <select class="form-control" name="product">
                     <% for (product of products) { %>
-                    <option value="<%= product.id %>"> <%= product.brand %> - <%= product.description %> </option>
+                      <% for (st of product.stock) {%>
+                      <% if (st.quantity != "0") { %>
+                        <option value="<%= product.id %>"> <%= product.brand %> - <%= product.description %> </option>
+                      <% }} %>
                     <% } %>
                   </select>
                 </div>
