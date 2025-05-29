@@ -38,7 +38,7 @@ const DueAutoMailsWarning = async function () {
     };
     
     // URL de la API a la que deseas enviar el POST
-    const apiUrl = 'http://arweb01.crtp.corp:36245/api/Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797';
+    const apiUrl = 'http://arweb02.crtp.corp:32276/api/Email?appId=5B3DFA11-8EF6-465D-9D72-DEFD9FFBD8B7&accountId=6C0B00EB-FAD0-47BA-B370-F62DA5AD5797';
     
     // Realizar la solicitud POST utilizando Axios
     axios.post(apiUrl, postData)

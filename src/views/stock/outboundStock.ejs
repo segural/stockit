@@ -84,30 +84,28 @@
                     <table id="userList" class="table table-bordered table-striped table-hover">
                       <thead class="back_table_color">
                         <tr class="info">
-                          <th class="dt-center" hidden>Fecha</th>
                           <th class="dt-center">Fecha</th>
                           <th>Producto</th>
                           <th>Cantidad</th>
                           <th>Centro Atención</th>
                           <th>Equipo - Sector</th>
                           <th>Realizado por:</th>
-                          <th class="dt-center">Orden de Compra</th>
                         </tr>
                       </thead>
                       <tbody>
                         <% for (stock of stockout) {%>
                           <tr class="info1">
-                            <td class="dt-center" hidden>
-                              <%  let FechaOculta = new Date(stock.createdAt);FechaOculta = new Date(FechaOculta.getFullYear(),FechaOculta.getMonth(),FechaOculta.getDate()) %> 
-                              <%= FechaOculta.toISOString() %>
+                            <td class="dt-center">
+                              <%  let Fecha = new Date(stock.createdAt);Fecha = new Date(Fecha.getFullYear(),Fecha.getMonth(),Fecha.getDate()) %> 
+                              <%= Intl.DateTimeFormat('fr-CA').format(new Date(Fecha)) %>
                             </td>
-                            <td class="dt-center"><%= Intl.DateTimeFormat('es-AR').format(new Date(stock.createdAt)) %></td>
                             <td><%= stock.product.description %></td>
                             <td><%= stock.quantity %></td>
                             <td><%= stock.branch %></td>
                             <td><%= stock.notes %></td>
                             <td><%= stock.user %></td>
-                            <% if (stock.oc == null) {%>
+                            <!-- Oculto porque no tiene TH -->
+                            <!-- <% if (stock.oc == null) {%>
                             <td class="dt-center">
                               <a data-toggle="modal" href="#addModal-<%= stock.id %>" style="margin-right: 10px;">
                               <button class="btn btn-add btn-sm"><i class="fa fa-plus"></i> </button>
@@ -115,7 +113,8 @@
                             </td>
                             <% } else {%>
                             <td class="dt-center"><%= stock.oc.number %></td>
-                            <% } %>
+                            <% } %> -->
+                            <!-- Oculto porque no tiene TH -->
                           </tr>
                           <!-- Modal to add ocs-->
                             <div class="modal fade" id="addModal-<%= stock.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
