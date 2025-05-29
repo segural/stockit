@@ -39,7 +39,7 @@ const stockController = {
         });
         let products = await db.products.findAll({
             where: {
-                idCategory: categories.id
+                [Op.and]: [{ idCategory: categories.id }, { enable: 1 }],
             },
             include: [
                 {association:"stock"}

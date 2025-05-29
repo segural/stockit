@@ -142,7 +142,7 @@
                                 <button class="btn btn-add btn-sm"><i class="fa fa-pencil"></i></button>
                               </a>
                               <a data-toggle="modal" href="#disableModal-<%= product.id %>">
-                                <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button>
+                                <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-thumbs-o-down"></i></button>
                               </a>
                             <!-- Modal to edit-->
                             <div class="modal fade" id="editModal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -184,17 +184,15 @@
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header modal-header-primary">
-                                    <h4><i class="fa fa-trash m-r-5"></i> Eliminación de Producto</h4>
+                                    <h4><i class="fa fa-trash m-r-5"></i> Deshabilitar Producto</h4>
                                   </div>
                                   <div class="modal-body">
-                                    <h6>Confirma la eliminación del producto <b><%= product.name %></b> ?</h6>
-                                    <br>
-                                    <h6>Esta acción no se puede deshacer.</h6>
+                                    <h6>Confirma la deshabilitación del producto <b><%= product.name %></b> ?</h6>
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
                                     <form action="/products/disableitem/<%= product.id %>?_method=PUT" method="POST" id="form">
-                                      <button type="submit" class="btn btn-danger btn-md">Eliminar</button>
+                                      <button type="submit" class="btn btn-danger btn-md">Deshabilitar</button>
                                     </form>
                                   </div>
                                 </div>

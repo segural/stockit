@@ -62,83 +62,106 @@
             <i class="fa fa-user"></i>
           </div>
           <div class="header-title">
-            <h1>Stock General</h1>
-            <small>Movimientos de Stock</small>
+            <h1>Productos Deshabilitados</h1>
+            <small>Lista de productos</small>
           </div>
         </section>
         <!-- Main content -->
         <section class="content">
           <div class="row">
             <div class="col-lg-12">
+              <div class="btn-group d-flex" role="group">
+                <div class="buttonexport">
+                </div>
+              </div>
               <div class="card" id="lobicard-custom-control" data-sortable="true">
                 <div class="card-header">
                   <div class="card-title custom_title">
-                    <h4>Detalles de Movimientos de Stock Saliente</h4>
+                    <h4>Detalles de los Productos</h4>
                   </div>
                 </div>
                 <div class="card-body">
-                  <!-- Plugin content:powerpoint,txt,pdf,png,word,xl -->
-
-                  <!-- ./Plugin content:powerpoint,txt,pdf,png,word,xl -->
                   <div class="table-responsive">
                     <table id="userList" class="table table-bordered table-striped table-hover">
                       <thead class="back_table_color">
                         <tr class="info">
-                          <th class="dt-center" hidden>Fecha</th>
-                          <th class="dt-center">Fecha</th>
-                          <th>Producto</th>
-                          <th>Cantidad</th>
-                          <th>Centro Atención</th>
-                          <th>Equipo - Sector</th>
-                          <th>Realizado por:</th>
-                          <th class="dt-center">Orden de Compra</th>
+                          <th>Categoría</th>
+                          <th>Marca</th>
+                          <th>Descripción</th>
+                          <th class="dt-center">Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <% for (stock of stockout) {%>
-                          <tr class="info1">
-                            <td class="dt-center" hidden>
-                              <%  let FechaOculta = new Date(stock.createdAt);FechaOculta = new Date(FechaOculta.getFullYear(),FechaOculta.getMonth(),FechaOculta.getDate()) %> 
-                              <%= FechaOculta.toISOString() %>
-                            </td>
-                            <td class="dt-center"><%= Intl.DateTimeFormat('es-AR').format(new Date(stock.createdAt)) %></td>
-                            <td><%= stock.product.description %></td>
-                            <td><%= stock.quantity %></td>
-                            <td><%= stock.branch %></td>
-                            <td><%= stock.notes %></td>
-                            <td><%= stock.user %></td>
-                            <% if (stock.oc == null) {%>
-                            <td class="dt-center">
-                              <a data-toggle="modal" href="#addModal-<%= stock.id %>" style="margin-right: 10px;">
-                              <button class="btn btn-add btn-sm"><i class="fa fa-plus"></i> </button>
+                        <% for( product of products ) { %>
+                        <tr>
+                          <td><%= product.category.name %></td>
+                          <td><%= product.brand %></td>
+                          <td><%= product.description %></td>
+                          <td class="dt-center">
+                              <a data-toggle="modal" href="#editModal-<%= product.id %>">
+                                <button class="btn btn-add btn-sm"><i class="fa fa-pencil"></i></button>
                               </a>
-                            </td>
-                            <% } else {%>
-                            <td class="dt-center"><%= stock.oc.number %></td>
-                            <% } %>
-                          </tr>
-                          <!-- Modal to add ocs-->
-                            <div class="modal fade" id="addModal-<%= stock.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <a data-toggle="modal" href="#enableModal-<%= product.id %>">
+                                <button class="btn btn-success btn-sm" type="button"><i class="fa fa-thumbs-o-up"></i></button>
+                              </a>
+                            <!-- Modal to edit-->
+                            <div class="modal fade" id="editModal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-                                <div class="modal-header modal-header-primary">
-                                  <h4><i class="fa fa-plus m-r-5"></i> Agregar Orden de Compra Generado</h4>
-                                </div>
-                                <br>
-                                <form action="/stock/addoc/<%= stock.id %>" method="POST" id="form" class="main-form">
-                                <div class="col-md-12 form-group">
-                                  <label class="control-label">Nro. Orden de Compra</label>
-                                  <input type="number" class="form-control" name="number" required />
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-success btn-md">Enviar</button>
-                                  </form>
+                                  <div class="modal-header modal-header-primary">
+                                    <h4><i class="fa fa-pencil m-r-5"></i> Editar categoría</h4>
+                                  </div>
+                                  <br>
+                                  <form action="/products/edititem/<%= product.id %>?_method=PUT" method="POST" id="form" class="main-form">
+                                    <div class="col-md-12 form-group">
+                                      <label class="control-label">Marca</label>
+                                      <input type="text" name="brand" class="form-control" id="brand" value="<%= product.brand %>" />
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                      <label class="control-label">Descripción</label>
+                                      <input type="text" name="description" class="form-control" id="description" value="<%= product.description %>" />
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                      <label class="control-label">Categoría</label>
+                                      <select class="form-control" name="category">
+                                        <option value="<%= product.category.id %>" selected> <%= product.category.name %></option>
+                                        <% for( category of categories ) { %>
+                                          <option value="<%= category.id %>"> <%= category.name %></option>
+                                        <% } %>
+                                      </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-success btn-md">Enviar</button>
+                                      </form>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          <!-- end of modal to add ocs-->
-                          <% } %>
+                            <!-- end of modal to edit -->
+                            <!-- Modal to enable product-->
+                            <div class="modal fade" id="enableModal-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header modal-header-primary">
+                                    <h4><i class="fa fa-trash m-r-5"></i> Habilitación de Producto</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <h6>Confirma la habilitación del producto <b><%= product.name %></b> ?</h6>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal">Cancelar</button>
+                                    <form action="/products/enableitem/<%= product.id %>?_method=PUT" method="POST" id="form">
+                                      <button type="submit" class="btn btn-success btn-md">Habilitar</button>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end of modal to disable -->
+                          </td>
+                        </tr>
+                        <% } %>
                       </tbody>
                     </table>
                   </div>
@@ -211,9 +234,6 @@
           language: {
             url: "/assets/plugins/datatables/language/es-AR.json",
           },
-          order: [
-            [0, 'desc']
-          ],
         });
       });
     </script>

@@ -10,6 +10,7 @@ const productsController = require("../controllers/productsController.js");
 //Rutas de listados
 router.get("/items", productsController.productslist);
 router.get("/categories", productsController.categorieslist);
+router.get("/disable", productsController.productsdisable);
 
 //Rutas para add
 router.post("/addcategory/", productsController.categoriesadd);
@@ -19,8 +20,9 @@ router.post("/additem/", productsController.itemadd);
 router.put("/editcategory/:id", productsController.categoriesedit);
 router.put("/edititem/:id", productsController.itemedit);
 
-//Rutas de disable
+//Rutas de enable/disable
 router.put("/disableitem/:id", productsController.itemdisable);
+router.put("/enableitem/:id", productsController.itemenable);
 
 //Rutas para eliminar
 //router.delete("/destroycategory/:id", productsController.categoriesdestroy);

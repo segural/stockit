@@ -50,7 +50,9 @@
                <% if (req.session.userCan.includes("ABM_Productos")) {%>
                <li class="<%= req.originalUrl === '/products/items' ? 'active' : '' %>" ><a  href="/products/items">Productos</a></li>
                <% } if (req.session.userCan.includes("ABM_Categorias")) { %>       
-               <li class="<%= req.originalUrl === '/products/categories' ? 'active' : '' %>" ><a  href="/products/categories">Categorías</a></li>
+               <li class="<%= req.originalUrl === '/products/categories' ? 'active' : '' %>" ><a  href="/products/categories">Categorías</a></li>         
+               <% } if (req.session.userCan.includes("ABM_Productos")) { %>       
+               <li class="<%= req.originalUrl === '/products/disable' ? 'active' : '' %>" ><a  href="/products/disable">Deshabilitados</a></li>
                <% } %>             
             </ul>
          </li>

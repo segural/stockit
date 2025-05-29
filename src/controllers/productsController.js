@@ -40,6 +40,17 @@ const productController = {
     res.redirect("/products/items")
   },
 
+  productsdisable: async (req, res) => {
+    let categories = await db.categories.findAll();
+    let products = await db.products.findAll({
+      where: {enable: 0},
+      include: [
+        {association:"category"}
+      ]
+    })
+    res.render("./products/productsDisable.ejs" , {req, products, categories});
+  },
+
   itemdisable: async (req, res) => {
     let itemToDisable = await db.products.findByPk(req.params.id);
     itemToDisable.update({
@@ -47,6 +58,16 @@ const productController = {
     })
     res.redirect("/products/items")
   },
+
+  itemenable: async (req, res) => {
+    let itemToDisable = await db.products.findByPk(req.params.id);
+    itemToDisable.update({
+      enable: true,
+    })
+    res.redirect("/products/items")
+  },
+
+
 
 //ABM Categorias
   categorieslist: async (req, res) => {
